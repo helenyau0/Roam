@@ -1,11 +1,16 @@
 const db = require('./db')
 
+const email = (email) => {
+  console.log('retrieving email from database');
+  return db.one('SELECT * FROM users WHERE email=$1', [email])
+}
+
 const get = (id) => {
   return db.one('SELECT * FROM users WHERE id=$1', [id])
 }
 
-const create = (user) => {
-  return db.none('INSERT INTO users (name, email, password) VALUES($1, $2, $3)', [user.name, user.email, user.password])
+const create = (user, hash) => {
+  return db.none('INSERT INTO users (name, email, password) VALUES($1, $2, $3)', [user.name, user.email, hash])
 }
 //
 // const updateUser = () => {
@@ -14,5 +19,6 @@ const create = (user) => {
 
 module.exports = {
   get,
-  create
+  create,
+  email
 }
