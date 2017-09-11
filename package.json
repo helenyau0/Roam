@@ -1,0 +1,29 @@
+{
+  "name": "roam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "createdb roam",
+    "db:drop": "dropdb roam",
+    "db:schema": "psql roam < ./src/models/database/schema.sql",
+    "db:seed": "psql roam < ./src/models/database/seed.sql",
+    "db:reset": "npm run db:drop npm run db:create npm run db:schema npm run db:seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helenyau0/Roam.git"
+  },
+  "author": "Helen Yau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helenyau0/Roam/issues"
+  },
+  "homepage": "https://github.com/helenyau0/Roam#readme",
+  "dependencies": {
+    "nodemon": "^1.12.0",
+    "pg-promise": "^6.5.2"
+  }
+}
