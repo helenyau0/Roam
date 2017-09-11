@@ -1,4 +1,4 @@
-const db = require('./database/db')
+const db = require('./db')
 
 const get = (id) => {
   return db.one('SELECT * FROM users WHERE id=$1', [id])

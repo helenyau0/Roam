@@ -6,7 +6,7 @@ CREATE TABLE users (
   email VARCHAR(255),
   current_city VARCHAR(255),
   password VARCHAR(255),
-  created_at TIMESTAMP
+  created_at TIMESTAMP DEFAULT current_timestamp
 );
 
 CREATE TABLE cities (
@@ -19,6 +19,6 @@ CREATE TABLE posts (
   title TEXT,
   body TEXT,
   created_at TIMESTAMP,
-  user_id REFERENCES users(id) ON DELETE CASCADE,
-  city_id REFERENCES cities(id) ON DELETE CASCADE
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  city_id INT REFERENCES cities(id) ON DELETE CASCADE
 );

@@ -1,4 +1,4 @@
-const user = require('./database/cities')
+const user = require('./database/users')
 
 module.exports = {
   get: user.get,
