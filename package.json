@@ -10,7 +10,7 @@
     "db:drop": "dropdb roam",
     "db:schema": "psql roam < ./src/models/database/schema.sql",
     "db:seed": "psql roam < ./src/models/database/seed.sql",
-    "db:reset": "npm run db:drop npm run db:create npm run db:schema npm run db:seed"
+    "db:reset": "npm run db:drop npm run db:create npm run db:schema"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,15 @@
   },
   "homepage": "https://github.com/helenyau0/Roam#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.0",
+    "cookie-session": "^1.3.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
     "nodemon": "^1.12.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg-promise": "^6.5.2"
   }
 }

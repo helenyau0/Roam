@@ -4,7 +4,11 @@ const router = require('express').Router()
 const users = require('./users')
 
 router.get('/', (req, res) => {
-  res.send('hi again')
+  if(req.user) {
+    res.render('index', {name: req.user.name})
+  } else {
+    res.redirect('/users/login')
+  }
 })
 
 router.use('/users', users)

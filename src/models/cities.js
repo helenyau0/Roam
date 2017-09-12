@@ -1,5 +1,6 @@
-const pgp = require('pg-promise')()
-const cn = process.env.DATABASE || 'postgres://localhost:5432/roam'
-const db = pgp(cn)
+const city = require('./database/cities')
 
-module.exports = db
+module.exports = {
+  getAll: city.getAll,
+  getPost: city.getPost  
+}
