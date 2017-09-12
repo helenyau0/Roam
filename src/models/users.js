@@ -10,7 +10,7 @@ const createHashedPasword = (password) => {
 passport.use(new LocalStrategy(
   (email, password, done) => {
     console.log('got in the passport')
-    user.email(email)
+    user.find(email)
     .then(user => {
       console.log('getting to the .then in passport');
       if (!user) {
@@ -43,6 +43,7 @@ passport.deserializeUser((id, done) => {
 module.exports = {
   get: user.get,
   create: user.create,
+  find: user.find,
   createHashedPasword,
   passport,
   update: user.update

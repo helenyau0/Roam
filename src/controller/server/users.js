@@ -5,15 +5,27 @@ router.get('/signup', (req, res) => {
   res.render('signup')
 })
 
-router.post('/signup', (req, res) => {
+router.post('/signup', (req, res, next) => {
   const password = req.body.password
-  dbUser.createHashedPasword(password)
-  .then(hash => {
-    dbUser.create(req.body, hash)
-    .then(() => {
-      res.redirect('/')
-    })
-  })
+  const confirm = req.body.confirm
+  if (password !== confirm) {
+    res.render('signup', {error: 'Password does not match!'})
+  } else {
+    dbUser.find(req.body.email)
+    .then(user => {
+      if (user) {
+        res.render('signup', {error: 'Email is already taken!'})
+      } else {
+          dbUser.createHashedPasword(password)
+          .then(hash => {
+            dbUser.create(req.body, hash)
+            .then(() => {
+              res.redirect('/')
+          }).catch(next)
+        }).catch(next)
+      }
+    }).catch(next)
+  }
 })
 
 router.get('/login', (req, res) => {
