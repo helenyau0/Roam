@@ -1,7 +1,6 @@
 const db = require('./db')
 
-const email = (email) => {
-  console.log('retrieving email from database');
+const find = (email) => {
   return db.one('SELECT * FROM users WHERE email=$1', [email])
 }
 
@@ -20,6 +19,6 @@ const update = (id, body) => {
 module.exports = {
   get,
   create,
-  email,
+  find,
   update
 }
