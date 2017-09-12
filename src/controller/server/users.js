@@ -50,8 +50,11 @@ router.get('/:id', (req,res) => {
   })
 })
 
-router.post('/update', (req, res) => {
-
+router.post('/:id', (req, res, next) => {
+  dbUser.update(req.params.id, req.body) 
+  .then((user) => {
+    res.redirect(`/users/${user.id}`)
+  }).catch(next)
 })
 
 module.exports = router
