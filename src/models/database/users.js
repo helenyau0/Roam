@@ -12,13 +12,14 @@ const get = (id) => {
 const create = (user, hash) => {
   return db.none('INSERT INTO users (name, email, password) VALUES($1, $2, $3)', [user.name, user.email, hash])
 }
-//
-// const updateUser = () => {
-//   return db.one('UPDATE users SET(name) ')
-// }
+
+const update = (id, body) => {
+  return db.one('UPDATE users SET name=$1, current_city=$2 WHERE id=$3 RETURNING *', [body.name, body.current_city, id])
+}
 
 module.exports = {
   get,
   create,
-  email
+  email,
+  update
 }

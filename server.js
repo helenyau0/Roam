@@ -12,12 +12,16 @@ require('dotenv').load()
 app.set('view engine', 'ejs')
 app.set('views', (__dirname, 'src/views'))
 
+app.use(express.static('public'))
 app.use(session({secret: process.env.SECRET}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-
+app.use((req, res, next) => {
+  res.locals.userSess = req.user
+  next()
+})
 app.use('/', controller)
 
 app.listen(port)

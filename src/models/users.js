@@ -44,5 +44,6 @@ module.exports = {
   get: user.get,
   create: user.create,
   createHashedPasword,
-  passport
+  passport,
+  update: user.update
 }

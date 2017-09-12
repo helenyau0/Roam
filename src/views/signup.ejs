@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+    <% include ./header%>
     <form action="/users/signup" method="post"/>
       <input type="text" name="name" placeholder="name" required/>
       <input type="email" name="email" placeholder="email" required/>
@@ -13,7 +14,7 @@
       <input type="password" name="confirm" placeholder="confirm password" required/>
       <input type="submit" value="Sign Up"/>
     </form>
-    <script type="text/javascript" src='./public/index.js'>
+    <script type="text/javascript" src='/index.js'>
     </script>
   </body>
 </html>

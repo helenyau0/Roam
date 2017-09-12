@@ -22,9 +22,24 @@ router.get('/login', (req, res) => {
 
 router.post('/login', dbUser.passport.authenticate('local'),
   (req, res) => {
-    console.log('it succeeds')
-    console.log('it gets the name of the req.user', req.user.name)
-    res.redirect('/')
+    res.redirect(`/users/${req.user.id}`)
+})
+
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
+
+router.get('/:id', (req,res) => {
+  dbUser.get(req.params.id)
+  .then(user => {
+    console.log(user)
+    res.render('profile', {user})
+  })
+})
+
+router.post('/update', (req, res) => {
+
 })
 
 module.exports = router
