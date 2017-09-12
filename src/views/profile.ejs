@@ -4,6 +4,11 @@ In user's profile page
   <h1 class="whatever"><%= user.name%></h1>
   <h1><%= user.current_city%></h1>
   <h1><%= user.created_at%></h1>
+  <div>    
+    <% posts.forEach(function(post) { %>
+      <li><a href="/users/<%=user.id%>/posts/<%=post.id%>"><%= post.title%></a></li>
+    <% }) %>
+  </div>
   <% if (userSess) { %>
     <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
       Edit Profile

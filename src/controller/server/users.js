@@ -45,8 +45,10 @@ router.get('/logout', (req, res) => {
 router.get('/:id', (req,res) => {
   dbUser.get(req.params.id)
   .then(user => {
-    console.log(user)
-    res.render('profile', {user})
+    dbUser.getPost(req.params.id)
+    .then(posts => {
+      res.render('profile', {user, posts})
+    })
   })
 })
 
@@ -55,6 +57,17 @@ router.post('/:id', (req, res, next) => {
   .then((user) => {
     res.redirect(`/users/${user.id}`)
   }).catch(next)
+})
+
+
+router.get('/:id/posts/:postID', (req, res, next) => {
+  const id = req.params.id
+  dbUser.getPost(id)
+  .then(posts => {
+    console.log('postsss', posts)
+    const post = posts.filter(post => post.id == req.params.postID)[0]
+    res.render('show', {post})
+  })
 })
 
 module.exports = router

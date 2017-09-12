@@ -18,7 +18,7 @@ CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   title TEXT,
   body TEXT,
-  created_at TIMESTAMP,
+  created_at TIMESTAMP DEFAULT current_timestamp
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   city_id INT REFERENCES cities(id) ON DELETE CASCADE
 );
