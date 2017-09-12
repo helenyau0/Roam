@@ -16,9 +16,14 @@ const update = (id, body) => {
   return db.one('UPDATE users SET name=$1, current_city=$2 WHERE id=$3 RETURNING *', [body.name, body.current_city, id])
 }
 
+const getPost = (id) =>  {
+  return db.any('SELECT posts.id, posts.title, posts.body, users.name FROM users JOIN posts ON posts.user_id = $1;', id)
+}
+
 module.exports = {
   get,
   create,
   find,
-  update
+  update,
+  getPost
 }
