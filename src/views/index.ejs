@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <% include ./header%>
 <body>
-  NEEDS SPLASH PAGE!!!
+  <% cities.forEach(function(city) {%>
+    <a href='/cities/<%=city.id%>'><%=city.name%></a>
+  <%})%>
 </body>

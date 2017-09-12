@@ -1,5 +1,7 @@
 const city = require('./database/cities')
 
 module.exports = {
-  getAll: city.getAll 
+  getOne: city.getOne ,
+  getAll: city.getAll,
+  getPost: city.getPost
 }
