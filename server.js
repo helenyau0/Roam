@@ -22,7 +22,16 @@ app.use((req, res, next) => {
   res.locals.userSess = req.user
   next()
 })
+
+app.get('/test', (req, res) => {
+  res.render('test')
+})
+
 app.use('/', controller)
+
+app.use((err, req, res, next) => {
+  res.status(500).send(`${err}`)
+})
 
 app.listen(port)
 console.log('Listening on port: 3000');
