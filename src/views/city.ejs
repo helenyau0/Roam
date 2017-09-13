@@ -2,7 +2,7 @@
 <% include ./header%>
 <%= city.name %>
   <% posts.forEach(function(post) {%>
-    <form method='post' action='/cities/delete/<%=post.pid%>'>
+    <form method='post' action='/posts/delete/<%=post.id%>'>
       <ul>
         <li><%=post.title%></li>
         <li><%=post.body%></li>
@@ -10,12 +10,12 @@
     </form>
     <button class="delete" value="<%= JSON.stringify(post) %>" type='submit'>Delete</button>
 
-    <button type='submit'><a href='/cities/update/<%=post.pid%>'>Update</a></button>
+    <button type='submit'><a href='/posts/update/<%=post.id%>'>Update</a></button>
   <%})%>
   
   <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
 
-    <form class="" action="/users/post/<%=city.id%>" method="post">
+    <form class="" action="/posts/<%=city.id%>" method="post">
       <div tabindex="-1" role="dialog" class="modal">
         <div role="document" class="modal-dialog">
           <div class="modal-content myModal">

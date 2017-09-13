@@ -1,7 +1,6 @@
-const city = require('./database/cities')
+const dbCities = require('./database/cities')
 
 module.exports = {
-  getOne: city.getOne ,
-  getAll: city.getAll,
-  remove: city.remove
+  findById: dbCities.findById,
+  getAll: dbCities.getAll
 }

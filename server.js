@@ -24,14 +24,10 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/test', (req, res) => {
-  res.render('test')
-})
-
 app.use('/', controller)
 
 app.use((err, req, res, next) => {
-  res.status(500).send(`${err}`)
+  res.status(500).send(`${err.message}${err.stack}`)
 })
 
 app.listen(port)

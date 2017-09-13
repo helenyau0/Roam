@@ -1,9 +1,10 @@
-const post = require('./database/posts')
+const dbPosts = require('./database/posts')
 
 module.exports = {
-  getByUserId: post.getByUserId,
-  insertPost: post.insertPost,
-  getByCityId: post.getByCityId,
-  getById: post.getById,
-  updatePost: post.updatePost
+  findByUserId: dbPosts.findByUserId,
+  findByCityId: dbPosts.findByCityId,
+  create: dbPosts.create,
+  findById: dbPosts.findById,
+  update: dbPosts.update,
+  remove: dbPosts.remove
 }

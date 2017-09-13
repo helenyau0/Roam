@@ -2,6 +2,6 @@
 <% include ./header%>
 <body>
   <% cities.forEach(function(city) {%>
-    <a href='/cities/<%=city.id%>'><%=city.name%></a>
+    <li><a href='/cities/<%=city.id%>'><%=city.name%></a></li>
   <%})%>
 </body>

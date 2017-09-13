@@ -3,6 +3,10 @@ VALUES
 ('Oakland'),
 ('Oaktown');
 
+INSERT INTO users (name, email, password)
+VALUES
+('asdf', 'asdf@asdf', '$2a$10$hy5WinueVzTuQJD45VwI2u0s8ywXzQaFFti5CqS6d/Y.d7IozdBsq');
+
 INSERT INTO posts (title, body, user_id, city_id)
 VALUES
 ('On my way to Oaktown', 'I caught a pickachu', 1, 2),

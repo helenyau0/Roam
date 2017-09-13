@@ -6,7 +6,7 @@ In user's profile page
   <h1><%= user.created_at%></h1>
   <div>    
     <% posts.forEach(function(post) { %>
-      <li><a href="/users/<%=user.id%>/posts/<%=post.id%>"><%= post.title%></a></li>
+      <li><a href="/posts/<%=post.id%>"><%= post.title%></a></li>
     <% }) %>
   </div>
   <% if (userSess) { %>

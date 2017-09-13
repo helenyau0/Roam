@@ -1,4 +1,6 @@
-DROP TABLE IF EXIST users;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS cities;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -16,9 +18,9 @@ CREATE TABLE cities (
 
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
-  title TEXT,
+  title VARCHAR(200),
   body TEXT,
-  created_at TIMESTAMP DEFAULT current_timestamp
-  user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  city_id INT REFERENCES cities(id) ON DELETE CASCADE
+  created_at TIMESTAMP DEFAULT current_timestamp,
+  user_id INT REFERENCES users(id),
+  city_id INT REFERENCES cities(id)
 );

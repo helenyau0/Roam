@@ -1,14 +1,8 @@
 const router = require('express').Router()
-const dbCities = require('../../models/cities')
 
-router.get('/', (req, res) => {
-  dbCities.getAll()
-  .then(cities => {
-  res.render('index', { cities })
-  })
-})
-
-router.use('/users', require('./users'))
-router.use('/cities', require('./cities'))
+router.use('/', require('./routes/home'))
+router.use('/users', require('./routes/users'))
+router.use('/cities', require('./routes/cities'))
+router.use('/posts', require('./routes/posts'))
 
 module.exports = router
