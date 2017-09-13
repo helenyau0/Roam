@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const session = require('cookie-session')
 const passport = require('passport')
 const app = express()
-const controller = require('./src/controller/server')
+const controller = require('./src/controller')
 
 const port = process.env.PORT || 3000
 

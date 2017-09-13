@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const cities = require('../../../models/cities')
-const posts = require('../../../models/posts')
+const cities = require('../../models/cities')
+const posts = require('../../models/posts')
 
 router.get('/:id', (req, res, next) => {
   console.log('city route id')

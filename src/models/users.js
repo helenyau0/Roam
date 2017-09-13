@@ -3,16 +3,15 @@ const passport = require('passport')
 const bcrypt = require('bcrypt')
 const LocalStrategy = require('passport-local').Strategy
 
-const encryptText = (password) => {
-  return bcrypt.hash(password, 10)
-}
+const encryptPassword = (password) => 
+  bcrypt.hashSync(password, 10)
 
 passport.use(new LocalStrategy(
   (email, password, done) => {
     dbUsers.findByEmail(email)
     .then(foundUser => {
       if (bcrypt.compareSync(password, foundUser.password)) {
-         return done(null, user)
+         return done(null, foundUser)
       } else { 
         return done(null, false) 
       }
@@ -36,6 +35,6 @@ module.exports = {
   findByEmail: dbUsers.findByEmail,
   create: dbUsers.create,
   update: dbUsers.update,
-  encryptText,
+  encryptPassword,
   passport
 }
