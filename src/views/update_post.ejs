@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<% include ./header%>
+  <form method='post' action='/cities/update/<%=post.id%>'>
+    <label>Title:
+    <div>
+      <input name='title' value='<%=post.title%>'/>
+    </div>
+    </label><br>
+    <label>Body:
+    <div>
+      <textarea name='body'><%=post.body%></textarea>
+    </div>
+    </label>
+    <button type='submit'>Update</button>
+  </form>

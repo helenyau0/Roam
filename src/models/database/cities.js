@@ -8,12 +8,12 @@ const getAll = () => {
   return db.any('SELECT * FROM cities')
 }
 
-const getPost = (id) => {
-  return db.any('SELECT cities.id, posts.title, posts.body FROM posts JOIN cities ON posts.city_id = $1;', [id])
+const remove = (id) => {
+  return db.one('DELETE FROM posts WHERE id=$1 RETURNING *', [id])
 }
 
 module.exports = {
   getOne,
   getAll,
-  getPost
+  remove
 }

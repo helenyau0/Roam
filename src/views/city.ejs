@@ -1,8 +1,49 @@
+<!DOCTYPE html>
 <% include ./header%>
-<%= city.name%>
-<% posts.forEach(function(post) {%>
-    <ul>
-      <li><%=post.title%></li>
-      <li><%=post.body%></li>
-    </ul>
-<%})%>
+<%= city.name %>
+  <% posts.forEach(function(post) {%>
+    <form method='post' action='/cities/delete/<%=post.pid%>'>
+      <ul>
+        <li><%=post.title%></li>
+        <li><%=post.body%></li>
+      </ul>
+    </form>
+    <button class="delete" value="<%= JSON.stringify(post) %>" type='submit'>Delete</button>
+
+    <button type='submit'><a href='/cities/update/<%=post.pid%>'>Update</a></button>
+  <%})%>
+  
+  <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
+
+    <form class="" action="/users/post/<%=city.id%>" method="post">
+      <div tabindex="-1" role="dialog" class="modal">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content myModal">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Add Post</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Title:</label>
+                <div class="col-sm-10">
+                  <input type="text" name="title" class="form-control"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Body:</label>
+                <div class="col-sm-10">
+                  <textarea type="text" name="post" class="form-control"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal" class="btn btn-default exit">Close</button>
+              <button type="submit" class="btn btn-primary save">Post</button>
+            </div>
+        </div>
+      </div>
+    </form>
+  
+
+    <script src='/index.js'></script>

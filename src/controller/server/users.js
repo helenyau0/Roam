@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const dbUser = require('../../models/users')
+const dbPost = require('../../models/posts')
 
 router.get('/signup', (req, res) => {
   res.render('signup')
@@ -45,7 +46,7 @@ router.get('/logout', (req, res) => {
 router.get('/:id', (req,res) => {
   dbUser.get(req.params.id)
   .then(user => {
-    dbUser.getPost(req.params.id)
+    dbPost.getByUserId(req.params.id)
     .then(posts => {
       res.render('profile', {user, posts})
     })
@@ -62,12 +63,20 @@ router.post('/:id', (req, res, next) => {
 
 router.get('/:id/posts/:postID', (req, res, next) => {
   const id = req.params.id
-  dbUser.getPost(id)
+  dbPost.getByUserId(id)
   .then(posts => {
-    console.log('postsss', posts)
     const post = posts.filter(post => post.id == req.params.postID)[0]
     res.render('show', {post})
   })
+})
+
+router.post('/post/:id', (req, res, next) => {
+  const id = req.params.id
+
+  dbPost.insertPost(id, req.user.id, req.body)
+  .then(post => {
+    res.redirect(`/cities/${post.city_id}`)
+  }).catch(next)
 })
 
 module.exports = router
