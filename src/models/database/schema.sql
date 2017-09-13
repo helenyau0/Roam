@@ -8,6 +8,7 @@ CREATE TABLE users (
   email VARCHAR(255),
   current_city VARCHAR(255),
   password VARCHAR(255),
+  image BYTEA,
   created_at TIMESTAMP DEFAULT current_timestamp
 );
 

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.querySelector('.close').addEventListener('click', closeModal)
   document.querySelector('.exit').addEventListener('click', closeModal)
   document.querySelectorAll('.delete').forEach((deleted => {deleted.addEventListener('click', deletePost)}))
-});
+})
 
 const openModal = () => {
   document.querySelector('.modal').style.display = 'block'
@@ -14,10 +14,9 @@ const closeModal = () => {
 }
 
 const deletePost = (event) => {
-  console.log('itworks the detel button')
   const post = JSON.parse(event.target.value)
   if (confirm(`Are you sure you want to delete "${post.title}"?`)) {
     fetch(`/posts/delete/${post.id}`, {method: 'post'})
-    .then(response => { location.reload() })  
+    .then(response => { location.reload() })
   }
 }

@@ -3,9 +3,9 @@ VALUES
 ('Oakland'),
 ('Oaktown');
 
-INSERT INTO users (name, email, password)
+INSERT INTO users (name, email, password, image)
 VALUES
-('asdf', 'asdf@asdf', '$2a$10$hy5WinueVzTuQJD45VwI2u0s8ywXzQaFFti5CqS6d/Y.d7IozdBsq');
+('asdf', 'asdf@asdf', '$2a$10$hy5WinueVzTuQJD45VwI2u0s8ywXzQaFFti5CqS6d/Y.d7IozdBsq', '/image/squirtle.png');
 
 INSERT INTO posts (title, body, user_id, city_id)
 VALUES
