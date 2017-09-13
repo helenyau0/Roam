@@ -1,19 +1,11 @@
 const db = require('./db')
 
-const getOne = (id) => {
-  return db.one('SELECT * FROM cities WHERE id = $1', id)
-}
+const dbCities = {} 
 
-const getAll = () => {
-  return db.any('SELECT * FROM cities')
-}
+dbCities.findById = id => 
+  db.one('SELECT * FROM cities WHERE id = $1', [id])
 
-const remove = (id) => {
-  return db.one('DELETE FROM posts WHERE id=$1 RETURNING *', [id])
-}
+dbCities.getAll = () =>
+  db.any('SELECT * FROM cities')
 
-module.exports = {
-  getOne,
-  getAll,
-  remove
-}
+module.exports = dbCities

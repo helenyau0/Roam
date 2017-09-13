@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const session = require('cookie-session')
 const passport = require('passport')
 const app = express()
-const controller = require('./src/controller/server')
+const controller = require('./src/controller')
 
 const port = process.env.PORT || 3000
 
@@ -24,14 +24,10 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/test', (req, res) => {
-  res.render('test')
-})
-
 app.use('/', controller)
 
 app.use((err, req, res, next) => {
-  res.status(500).send(`${err}`)
+  res.status(500).send(`${err.message}${err.stack}`)
 })
 
 app.listen(port)
