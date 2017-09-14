@@ -40,7 +40,8 @@ passport.deserializeUser((id, done) => {
 
 module.exports = {
   findById: dbUsers.findById,
-  findByEmail: dbUsers.findByEmail,
+  findByEmail: dbUsers.findByEmail,  
+  findByName: dbUsers.findByName,
   create: dbUsers.create,
   update: dbUsers.update,
   encryptPassword,

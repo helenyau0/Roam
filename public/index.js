@@ -17,6 +17,10 @@ const deletePost = (event) => {
   const post = JSON.parse(event.target.value)
   if (confirm(`Are you sure you want to delete "${post.title}"?`)) {
     fetch(`/posts/delete/${post.id}`, {method: 'post'})
-    .then(response => { location.reload() })
+    .then(success => {
+      event.target.parentNode.remove()
+    }).catch(error => { 
+      console.log(error) 
+    })
   }
 }

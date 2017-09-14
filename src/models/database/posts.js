@@ -8,8 +8,10 @@ dbPosts.findByUserId = id =>
 dbPosts.create = (cityID, userID, body) =>
   db.one(`INSERT INTO posts (title, body, user_id, city_id) VALUES ($1, $2, $3, $4) RETURNING *`, [body.title, body.post, userID, cityID])
 
-dbPosts.findByCityId = id =>
-  db.any('SELECT * from posts WHERE city_id = $1', [id])
+dbPosts.findByCityId = (id, page) => {
+  const offset = ((page - 1) * 3)
+  return db.any('SELECT * from posts WHERE city_id = $1 limit 3 offset $2', [id, offset])
+}
 
 dbPosts.findById = (id) =>
   db.one('SELECT * FROM posts WHERE id=$1', [id])

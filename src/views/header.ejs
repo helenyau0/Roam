@@ -9,7 +9,7 @@
   <nav class="navbar navbar-inverse">
     <h1><a href="/">Roam</a></h1>
     <% if (userSess) { %>
-      <a href="/users/<%=userSess.id%>">Profile</a>
+      <a href="/users/<%=userSess.name%>">Profile</a>
       <a href="/users/logout">Logout</a>
     <% } else { %>
       <a href="/users/login">Login</a>
