@@ -1,7 +1,7 @@
-INSERT INTO cities (name)
+INSERT INTO cities (name, image)
 VALUES
-('Oakland'),
-('Oaktown');
+('Oakland', '/image/oakland.jpg'),
+('Oaktown', '/image/Oak-Town.png');
 
 INSERT INTO users (name, email, password, image)
 VALUES

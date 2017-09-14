@@ -1,17 +1,22 @@
 const router = require('express').Router()
 const posts = require('../../models/posts')
+const users = require('../../models/users')
 
 router.get('/:id', (req, res, next) => {
   posts.findById(req.params.id)
   .then(post => {
-    res.render('show', {post})
+    users.findById(post.user_id)
+    .then(user => {
+      console.log('got a iser', user);
+      res.render('show', {post, user: user})
+    })
   }).catch(next)
 })
 
 router.post('/:id', (req, res, next) => {
   posts.create(req.params.id, req.user.id, req.body)
   .then(post => {
-    res.redirect(`/cities/${post.city_id}`)
+    res.redirect(`/posts/${post.id}`)
   }).catch(next)
 })
 
