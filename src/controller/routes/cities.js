@@ -13,4 +13,12 @@ router.get('/:id', (req, res, next) => {
   }).catch(next)
 })
 
+router.post('/', (req, res, next) => {
+  const body = req.body
+  cities.create(body)
+  .then(() => {
+    res.redirect('/')
+  })
+})
+
 module.exports = router

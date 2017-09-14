@@ -35,11 +35,14 @@ router.post('/signup', (req, res, next) => {
 })
 
 
-router.post('/photos', (req, res) => {
+router.post('/photos', (req, res, next) => {
   const profile_pic = req.body.content
 
   users.updatePhoto(req.user.id, profile_pic)
-  res.redirect(`/users/${req.user.id}`)
+  .then(() => {
+    res.redirect(`/users/${req.user.id}`)
+  })
+  .catch(next)
 })
 router.use((req, res, next) => {
   if(!req.user) {
