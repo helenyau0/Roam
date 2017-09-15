@@ -4,7 +4,9 @@
   <div class="items">
     <div class="profile">
       <% include ./modals/user_pic %>
-      <% include ./users/card%>
+      <div class="card">
+        <% include ./users/card%>
+      </div>
         <% if (userSess) { %>
         <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
             Edit Profile

@@ -23,6 +23,16 @@ a:link {
   display: none;
 }
 
+.title {
+  border-bottom-style: solid;
+  font-size: 30px
+}
+
+.post-content {
+  text-align: justify;
+  padding: 10px;
+}
+
 .nav-city-name {
   color: lightgray;
   position: absolute;
@@ -132,3 +142,25 @@ a:link {
   margin: -45px 0 0 200px;
 }
 
+.show-page {
+  height: 500px;
+  text-align: center;
+}
+
+.show-card {
+  border: solid;
+  border-style: inset;
+  color: red;
+  width: 30%;
+  margin: 10px;
+}
+
+.show-posts {
+  border: solid;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.update-page {
+
+}

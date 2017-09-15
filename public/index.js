@@ -1,3 +1,4 @@
+UPLOADCARE_PUBLIC_KEY="6b5326acd4ea5f65a9c3"
 document.addEventListener("DOMContentLoaded", function(event) {
   document.querySelector('.editButton').addEventListener('click', openModal)
   document.querySelector('.close').addEventListener('click', closeModal)
@@ -15,12 +16,11 @@ const closeModal = () => {
 
 const deletePost = (event) => {
   const post = JSON.parse(event.target.value)
+  console.log('what is it', post)
   if (confirm(`Are you sure you want to delete "${post.title}"?`)) {
     fetch(`/posts/delete/${post.id}`, {method: 'post'})
     .then(success => {
-      event.target.parentNode.remove()
-    }).catch(error => { 
-      console.log(error) 
-    })
+      event.target.parentNode.parentNode.remove()
+    }).catch(console.log)
   }
 }

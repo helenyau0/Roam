@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <% include ./partials/header%>
 
-<% include ./users/card%>
+<div class="show-page container">
+  <div class="show-card">
+    <% include ./users/card%>
+  </div>
 
-<%= post.title%>
-<%= post.body%>
-<%= post.name%>
+  <div class="show-posts">
+    <li class="title"><%= post.title%></li>
+    <li><p class="post-content"><%= post.body%></p></li>
+  </div>
+</div>

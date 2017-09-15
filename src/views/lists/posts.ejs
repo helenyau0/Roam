@@ -12,12 +12,8 @@
 
     <% if(userSess) {%>
       <div class="items-in-posts">
-        <button class="delete buttons" value="<%= JSON.stringify(post) %>" type='submit'>
-        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        </button>
-        <button class="buttons" type='submit'><a href='/posts/update/<%=post.id%>'>
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-        </button>
+        <button class="glyphicon glyphicon-trash delete buttons" value="<%= JSON.stringify(post) %>" aria-hidden="true"></button>
+        <button class="buttons" aria-hidden="true"><a class="glyphicon glyphicon-edit" href='/posts/update/<%=post.id%>'></a></button>
       </div>
     <%}%>
 
