@@ -1,9 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('cookie-session')
-const passport = require('passport')
+const {passport} = require('./src/config/authentication')
+const middleware = require('./src/controllers/middlewares')
 const app = express()
-const controller = require('./src/controller')
+const controller = require('./src/controllers/routes')
+const flash = require('connect-flash')
 
 const port = process.env.PORT || 3000
 
@@ -16,18 +18,19 @@ app.use(express.static('public'))
 app.use(session({secret: process.env.SECRET}))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(flash())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use((req, res, next) => {
-  res.locals.userSess = req.user
-  res.locals.error = null
-  next()
-})
+app.use(middleware.localVariables)
 
 app.use('/', controller)
 
-app.use((err, req, res, next) => {
-  res.status(500).send(`${err.message}${err.stack}`)
+app.use((error, req, res, next) => {
+  res.status(500).render('./common/errors', {error})
+})
+
+app.use((req, res) => {
+  res.render('./common/not_found')
 })
 
 app.listen(port)

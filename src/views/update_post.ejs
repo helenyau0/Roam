@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<% include ./header%>
+
+<% include ./partials/header%>
+
+<div class="update-page">
   <form method='post' action='/posts/update/<%=post.id%>'>
     <label>Title:
     <div>
@@ -13,3 +16,4 @@
     </label>
     <button type='submit'>Update</button>
   </form>
+</div>

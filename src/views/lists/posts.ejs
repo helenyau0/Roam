@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<% posts.forEach(function(post) {%>
+  <div class="post postitems" id ="<%=post.id%>">
+    
+  <dl class="dl-horizontal">
+    <dt>
+      <li><h3>
+        <a href="/posts/<%=post.id%>"><%= post.title%></a>
+        </h3></li>
+      </dt>
+    <dd><li class="truncate1000"><%=post.body.slice(0, 1000) %></li></dd>
+  </dl>
+
+    <div>
+      <ul>
+       
+      </ul>
+    </div>
+
+    <% if(userSess) {%>
+      <div class="items-in-posts">
+        <button class="glyphicon glyphicon-trash delete buttons" value="<%= JSON.stringify(post) %>" aria-hidden="true"></button>
+        <button class="buttons" aria-hidden="true"><a class="glyphicon glyphicon-edit" href='/posts/update/<%=post.id%>'></a></button>
+      </div>
+    <%}%>
+
+  </div>
+<%})%>
