@@ -10,7 +10,7 @@
     "db:drop": "dropdb roam",
     "db:schema": "psql roam < ./src/models/database/schema.sql",
     "db:seed": "psql roam < ./src/models/database/seed.sql",
-    "db:reset": "npm run db:drop npm run db:create npm run db:schema"
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:schema && npm run db:seed"
   },
   "repository": {
     "type": "git",

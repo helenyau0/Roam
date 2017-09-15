@@ -2,11 +2,11 @@ const router = require('express').Router()
 const cities = require('../../models/cities')
 const posts = require('../../models/posts')
 
-router.get('/:id', (req, res, next) => {
-  console.log('city route id')
-  cities.findById(req.params.id)
+router.get('/:name', (req, res, next) => {
+  const pages = parseInt(req.query.pages) || 1
+  cities.findByName(req.params.name)
   .then(city => {
-    posts.findByCityId(city.id)
+    posts.findByCityId(city.id, pages)
     .then(posts => {
       res.render('city', {city, posts})
     }).catch(next)
@@ -15,10 +15,21 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const body = req.body
-  cities.create(body)
-  .then(() => {
-    res.redirect('/')
+  cities.findByName(body.name)
+  .then(city => {
+    if (city.name !== null) {
+      cities.getAll() 
+      .then( cities => {
+        res.render('index', {cities, error: 'City already exit, choose another city!'})
+      })
+    } else {
+      cities.create(body)
+      .then(() => {
+        res.redirect('/')
+      }).catch(next)
+    }
   })
 })
+
 
 module.exports = router

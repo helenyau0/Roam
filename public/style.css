@@ -28,3 +28,9 @@
   height: 500px;
   padding: 2px;
 }
+
+.truncate1000{
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}

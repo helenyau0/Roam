@@ -8,6 +8,9 @@ dbUsers.findByEmail = (email) =>
 dbUsers.findById = (id) =>
   db.oneOrNone('SELECT * FROM users WHERE id=$1', [id])
 
+dbUsers.findByName = (name) =>
+  db.oneOrNone('SELECT * FROM users WHERE name=$1', [name])
+
 dbUsers.create = (user, hash) =>
   db.one('INSERT INTO users (name, email, password, image) VALUES($1, $2, $3) RETURNING *', [user.name, user.email, hash, '/image/squirtle.png'])
 

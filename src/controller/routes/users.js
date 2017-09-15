@@ -44,6 +44,7 @@ router.post('/photos', (req, res, next) => {
   })
   .catch(next)
 })
+
 router.use((req, res, next) => {
   if(!req.user) {
     res.redirect('/users/login')
@@ -52,9 +53,8 @@ router.use((req, res, next) => {
   }
 })
 
-router.get('/:id', (req, res, next) => {
-  if(isNaN(req.params.id)) next()
-  users.findById(req.params.id)
+router.get('/:name', (req, res, next) => {
+  users.findByName(req.params.name)
   .then(user => {
     posts.findByUserId(user.id)
     .then((posts) => {
@@ -64,7 +64,6 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/:id', (req, res, next) => {
-  if(isNaN(req.params.id)) next()
   users.update(req.params.id, req.body)
   .then((user) => {
     res.redirect(`/users/${user.id}`)

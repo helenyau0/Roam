@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <% include ./header%>
 <%= city.name %>
+
+    <% for (let i = 1; i < posts.length ; i++) { %>
+      <a href='/cities/<%=city.name%>?pages=<%= i %>'><%= i %></a>
+    <% } %>
+
   <% posts.forEach(function(post) {%>
-    <form method='post' action='/posts/delete/<%=post.id%>'>
+    <div class="post" id ="<%=post.id%>">
       <ul>
         <li><%=post.title%></li>
-        <li><%=post.body%></li>
+        <li class="truncate1000"><%=post.body.slice(0, 1000) %> <a href='/posts/<%=post.id%>'>view more</a></li>
       </ul>
-    </form>
-    <% if(userSess) {%>
-      <button class="delete" value="<%= JSON.stringify(post) %>" type='submit'>Delete</button>
-      <button type='submit'><a href='/posts/update/<%=post.id%>'>Update</a></button>
-    <%}%>
+      <% if(userSess) {%>
+        <button class="delete" value="<%= JSON.stringify(post) %>" type='submit'>Delete</button>
+        <button type='submit'><a href='/posts/update/<%=post.id%>'>Update</a></button>
+      <%}%>
+    </div>
   <%})%>
+
   <% if(userSess) {%>
     <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
-
       <form class="" action="/posts/<%=city.id%>" method="post">
         <div tabindex="-1" role="dialog" class="modal">
           <div role="document" class="modal-dialog">
@@ -46,6 +51,4 @@
         </div>
       </form>
     <%}%>
-
-
     <script src='/index.js'></script>
