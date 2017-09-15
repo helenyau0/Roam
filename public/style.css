@@ -109,6 +109,8 @@ a:link {
   overflow: hidden;
   transition: 0.3s;
   padding: 5px;
+  position: relative;
+  right: 30px;
 }
 
 .listItems {
@@ -139,7 +141,10 @@ a:link {
 .items-in-posts {
   display: flex;
   flex-direction: row;
-  margin: -45px 0 0 200px;
+  width: 35px;
+  position: relative;
+  left: 974px;
+  bottom: 42px;
 }
 
 .show-page {
@@ -148,19 +153,47 @@ a:link {
 }
 
 .show-card {
-  border: solid;
-  border-style: inset;
-  color: red;
   width: 30%;
   margin: 10px;
+  position: relative;
+  right: 80px;
 }
 
 .show-posts {
-  border: solid;
+  border: 1px solid;
   width: 100%;
   overflow-y: scroll;
 }
 
 .update-page {
 
+}
+
+.city-page-content {
+  width: 100%;
+  text-align: center;
+}
+
+.city-page-content .right {
+  border: 1px solid;
+  position: relative;
+  left: 13%;
+  padding: 50px;
+  width: 1300px;
+  height: 600px;
+}
+
+.city-page-content .left {
+  padding: 20px;
+  width: 1200px;
+  border: 1px solid;
+}
+
+.city-page-content .right .editButton {
+  position: relative;
+  bottom: 20px;
+}
+
+.login input {
+  margin: 2.5px;
 }

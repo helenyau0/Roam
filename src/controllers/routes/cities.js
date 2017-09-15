@@ -13,6 +13,13 @@ router.get('/:name', (req, res, next) => {
   }).catch(next)
 })
 
+router.post('/:cityId/posts', (req, res, next) => {
+  posts.create(req.body.cityId, req.user.id, req.body)
+  .then(post => {
+    res.redirect(`/posts/${post.id}`)
+  }).catch(next)
+})
+
 router.post('/', (req, res, next) => {
   const body = req.body
   cities.findByName(body.name)

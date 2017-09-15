@@ -13,13 +13,6 @@ router.get('/:id', (req, res, next) => {
   }).catch(next)
 })
 
-router.post('/:id', (req, res, next) => {
-  posts.create(req.params.id, req.user.id, req.body)
-  .then(post => {
-    res.redirect(`/posts/${post.id}`)
-  }).catch(next)
-})
-
 router.get('/update/:id', (req, res, next) => {
   posts.findById(req.params.id)
   .then(post => {

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<% include ./partials/header%>
+<% include ./partials/header.ejs %>
 <h1>Login!</h1>
-<form action="/users/login" method="post">
-  <input class="input" name="username" type="email" placeholder="Email" required/><br>
-  <input class="input" name="password" type="password" placeholder="Password" required/><br>
-  <input clas="buttons" type="submit" value="Log In"/>
-</form>
+
+<%= error %>
+
+<div class="login">
+  <form action="/login" method="post">
+    <input class="input" name="username" type="email" placeholder="Email" required/><br>
+    <input class="input" name="password" type="password" placeholder="Password" required/><br>
+    <input clas="buttons" type="submit" value="Log In"/>
+  </form>
+</div >
 <script type="text/javascript" src='/index.js'>
 </script>

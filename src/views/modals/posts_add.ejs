@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<form class="" action="/posts/<%=city.id%>" method="post">
+<form class="" action="/cities/<%=city.id%>/posts" method="post">
+  <input type="hidden" name="cityId" value="<%=city.id%>">
   <div tabindex="-1" role="dialog" class="modal">
     <div role="document" class="modal-dialog">
       <div class="modal-content myModal">

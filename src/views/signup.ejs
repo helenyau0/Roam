@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <% include ./partials/header%>
+
 <p><%= error%></p>
+
 <h1>Sign Up!</h1>
-<form action="/users/signup" method="post"/>
-  <input class="input" type="text" name="name" placeholder="name" required/><br>
-  <input class="input" type="email" name="email" placeholder="email" required/><br>
-  <input class="input" type="password" name="password" placeholder="password" required/><br>
-  <input class="input" type="password" name="confirm" placeholder="confirm password" required/><br>
-  <input type="submit" value="Sign Up"/>
-</form>
+<div class="login">
+  <form action="/users/signup" method="post"/>
+    <input class="input" type="text" name="name" placeholder="name" required/><br>
+    <input class="input" type="email" name="email" placeholder="email" required/><br>
+    <input class="input" type="password" name="password" placeholder="password" required/><br>
+    <input class="input" type="password" name="confirm" placeholder="confirm password" required/><br>
+    <input type="submit" value="Sign Up"/>
+  </form>
+</div>
 <script type="text/javascript" src='/index.js'></script>

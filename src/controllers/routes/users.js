@@ -1,38 +1,31 @@
 const router = require('express').Router()
 const users = require('../../models/users')
+const {encryptPassword} = require('../../config/authentication')
 const posts = require('../../models/posts')
-
-router.get('/login', (req, res) => {
-  res.render('login')
-})
-
-router.post('/login', users.passport.authenticate('local'),
-(req, res) => {
-  res.redirect(`/users/${req.user.name}`)
-})
+const middleware = require('../middlewares')
 
 router.get('/signup', (req, res) => {
   res.render('signup')
 })
 
 router.post('/signup', (req, res, next) => {
-  const hashed = users.encryptPassword(req.body.password)
-  if (req.body.password !== req.body.confirm) {
+  const {password, confirm, email} = req.body
+  const hashed = encryptPassword(password)
+  if (password !== confirm) {
     res.render('signup', {error: "Password does not match!"})
   } else {
-    users.findByEmail(req.body.email)
+    users.findByEmail(email)
     .then(user => {
-      if(user !== null) {
+      if(user) {
         res.render('signup', {error: "Email Taken!"})
       } else if(user === null) {
         users.create(req.body, hashed)
-        res.redirect('/users/login')
+        res.redirect('/login')
       }
     })
     .catch(next)
   }
 })
-
 
 router.post('/photos', (req, res, next) => {
   const profile_pic = req.body.content
@@ -43,18 +36,8 @@ router.post('/photos', (req, res, next) => {
   .catch(next)
 })
 
-router.use((req, res, next) => {
-  if(!req.user) {
-    res.redirect('/users/login')
-  } else {
-    next()
-  }
-})
+router.use(middleware.authorized)
 
-router.get('/logout', (req, res) => {
-  req.logout()
-  res.redirect('/')
-})
 
 router.get('/:name', (req, res, next) => {
   users.findByName(req.params.name)

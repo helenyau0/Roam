@@ -3,10 +3,18 @@
 <% posts.forEach(function(post) {%>
   <div class="post postitems" id ="<%=post.id%>">
     
+  <dl class="dl-horizontal">
+    <dt>
+      <li><h3>
+        <a href="/posts/<%=post.id%>"><%= post.title%></a>
+        </h3></li>
+      </dt>
+    <dd><li class="truncate1000"><%=post.body.slice(0, 1000) %></li></dd>
+  </dl>
+
     <div>
       <ul>
-        <li><h3><a href="/posts/<%=post.id%>"><%= post.title%></a></h3>
-        <li class="truncate1000"><%=post.body.slice(0, 1000) %></li>
+       
       </ul>
     </div>
 
