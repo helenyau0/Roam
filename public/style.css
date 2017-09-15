@@ -1,11 +1,59 @@
+body {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+a:link {
+   text-decoration: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  padding: 5px;
+}
+
 .modal {
   display: none;
+}
+
+.nav-city-name {
+  color: lightgray;
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  right: 100px;
+}
+
+.hover-name {
+  display: none;
+}
+
+.city-image {
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  margin: 10px;
+  border-style: inset;
+  border-width: 1px; 
+}
+
+.city-image:hover {
+  background-color: black;
 }
 
 .label {
   border-radius: 10px;
 }
-
+.text-left {
+  text-align: left;
+}
 .modal-body .form-horizontal .col-sm-2,
 .modal-body .form-horizontal .col-sm-10 {
   width: 100%
@@ -23,14 +71,64 @@
   flex-direction: column;
 }
 
-.city_image {
-  width: 900px;
-  height: 500px;
-  padding: 2px;
-}
-
 .truncate1000{
   overflow: hidden;
   display: block;
   text-overflow: ellipsis;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+}
+
+.userInfo {
+  border: 1px solid black;
+  flex-direction: column;
+}
+
+.card {
+  border: 1px solid black;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  transition: 0.3s;
+  padding: 5px;
+}
+
+.listItems {
+  position: relative;
+  top: 50px;
+  left: 100px;
+  width: 200px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.input {
+  border-radius: 4px;
+}
+
+.buttons {
+  border-radius: 3px;
+  margin: 2px;
+  justify-content: space-around;
+}
+
+.items-in-posts {
+  display: flex;
+  flex-direction: row;
+  margin: -45px 0 0 200px;
+}
+

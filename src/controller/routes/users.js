@@ -8,7 +8,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', users.passport.authenticate('local'),
 (req, res) => {
-  res.redirect(`/users/${req.user.id}`)
+  res.redirect(`/users/${req.user.name}`)
 })
 
 router.get('/signup', (req, res) => {
@@ -22,7 +22,6 @@ router.post('/signup', (req, res, next) => {
   } else {
     users.findByEmail(req.body.email)
     .then(user => {
-      console.log('user =>', user)
       if(user !== null) {
         res.render('signup', {error: "Email Taken!"})
       } else if(user === null) {
@@ -37,10 +36,9 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/photos', (req, res, next) => {
   const profile_pic = req.body.content
-
   users.updatePhoto(req.user.id, profile_pic)
   .then(() => {
-    res.redirect(`/users/${req.user.id}`)
+    res.redirect(`/users/${req.user.name}`)
   })
   .catch(next)
 })
@@ -51,6 +49,11 @@ router.use((req, res, next) => {
   } else {
     next()
   }
+})
+
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
 })
 
 router.get('/:name', (req, res, next) => {
@@ -66,13 +69,8 @@ router.get('/:name', (req, res, next) => {
 router.post('/:id', (req, res, next) => {
   users.update(req.params.id, req.body)
   .then((user) => {
-    res.redirect(`/users/${user.id}`)
+    res.redirect(`/users/${user.name}`)
   }).catch(next)
-})
-
-router.get('/logout', (req, res) => {
-  req.logout()
-  res.redirect('/')
 })
 
 module.exports = router

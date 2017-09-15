@@ -21,13 +21,18 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use((req, res, next) => {
   res.locals.userSess = req.user
   res.locals.error = null
+  res.locals.city = null
   next()
 })
 
 app.use('/', controller)
 
-app.use((err, req, res, next) => {
-  res.status(500).send(`${err.message}${err.stack}`)
+app.use((error, req, res, next) => {
+  res.status(500).render('./errors/status', {error})
+})
+
+app.use((req, res) => {
+  res.render('./errors/not_found')
 })
 
 app.listen(port)

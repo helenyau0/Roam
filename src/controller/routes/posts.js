@@ -7,7 +7,6 @@ router.get('/:id', (req, res, next) => {
   .then(post => {
     users.findById(post.user_id)
     .then(user => {
-      console.log('got a iser', user);
       res.render('show', {post, user: user})
     })
   }).catch(next)

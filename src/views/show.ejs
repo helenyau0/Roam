@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<% include ./header%>
+<% include ./partials/header%>
 
-  <h1><%= user.name%></h1>
-  <img class="squirtle" src="<%= user.image%>" alt="" style="width:304px;height:228px;">
-  <h1><%= user.current_city%></h1>
-  <h1><%= user.created_at%></h1>
+<% include ./users/card%>
 
-  <%= post.title%>
-  <%= post.body%>
-  <%= post.name%>
+<%= post.title%>
+<%= post.body%>
+<%= post.name%>

@@ -1,54 +1,24 @@
 <!DOCTYPE html>
-<% include ./header%>
-<%= city.name %>
+<% include ./partials/header%>
 
-    <% for (let i = 1; i < posts.length ; i++) { %>
-      <a href='/cities/<%=city.name%>?pages=<%= i %>'><%= i %></a>
-    <% } %>
+<h3>Pages: 
+  <% for (let i = 1; i < posts.length ; i++) { %>
+    <a href='/cities/<%=city.name%>?pages=<%= i %>'><%= i %></a>
+  <% } %>
+</h3>
 
-  <% posts.forEach(function(post) {%>
-    <div class="post" id ="<%=post.id%>">
-      <ul>
-        <li><%=post.title%></li>
-        <li class="truncate1000"><%=post.body.slice(0, 1000) %> <a href='/posts/<%=post.id%>'>view more</a></li>
-      </ul>
-      <% if(userSess) {%>
-        <button class="delete" value="<%= JSON.stringify(post) %>" type='submit'>Delete</button>
-        <button type='submit'><a href='/posts/update/<%=post.id%>'>Update</a></button>
-      <%}%>
-    </div>
-  <%})%>
-
-  <% if(userSess) {%>
-    <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
-      <form class="" action="/posts/<%=city.id%>" method="post">
-        <div tabindex="-1" role="dialog" class="modal">
-          <div role="document" class="modal-dialog">
-            <div class="modal-content myModal">
-              <div class="modal-header">
-                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Add Post</h4>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Title:</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="title" class="form-control"/>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Body:</label>
-                  <div class="col-sm-10">
-                    <textarea type="text" name="post" class="form-control" required></textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="btn btn-default exit">Close</button>
-                <button type="submit" class="btn btn-primary save">Post</button>
-              </div>
-          </div>
-        </div>
-      </form>
+<div class="container">
+  <div style="border:solid" class="right">
+    <% if(userSess) {%>
+      <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
+      <% include ./modals/posts_add%>
     <%}%>
-    <script src='/index.js'></script>
+  </div>
+
+  <div style="border:solid" class="left">
+    <% include ./lists/posts%>
+  </div>
+</div>
+
+
+<script src='/index.js'></script>

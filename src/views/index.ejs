@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<% include ./header%>
-<body>
+<% include ./partials/header%>
+  
+<% if (error) { %>
+  <%= error%>
+<% } %>
 
-  <% if (error) { %>
-    <%= error%>
-  <% } %>
-  <form method="POST" action="/cities">
-    <input type="hidden" role="uploadcare-uploader" name="city_image" data-public-key="6b5326acd4ea5f65a9c3" data-images-only required/>
-    <input type="text" name="name" placeholder="City Name">
-    <input type="submit" value="Upload Photo">
-  </form>
-  <% cities.forEach(function(city) {%>
-    <a href='/cities/<%=city.name%>'><img class="city_image" src="<%=city.image%>"></a>
-  <%})%>
-  <script type="text/javascript" src="/index.js"></script>
-  <script type="text/javascript" src="//ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js"></script>
-</body>
+<% if (userSess) { %>
+  <% include ./modals/city_pic%>
+<% } %>
+
+<% cities.forEach(function(city) {%>
+  <a href='/cities/<%=city.name%>'>
+    <img class="city-image" src="<%=city.image%>">
+  </a>
+  <span class="hover-name"><%= city.name%></span>
+<%})%>
+<script type="text/javascript" src="/index.js"></script>

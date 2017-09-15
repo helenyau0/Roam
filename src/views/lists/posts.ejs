@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<% posts.forEach(function(post) {%>
+  <div class="post postitems" id ="<%=post.id%>">
+    
+    <div>
+      <ul>
+        <li><h3><a href="/posts/<%=post.id%>"><%= post.title%></a></h3>
+        <li class="truncate1000"><%=post.body.slice(0, 1000) %></li>
+      </ul>
+    </div>
+
+    <% if(userSess) {%>
+      <div class="items-in-posts">
+        <button class="delete buttons" value="<%= JSON.stringify(post) %>" type='submit'>
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+        <button class="buttons" type='submit'><a href='/posts/update/<%=post.id%>'>
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+        </button>
+      </div>
+    <%}%>
+
+  </div>
+<%})%>
