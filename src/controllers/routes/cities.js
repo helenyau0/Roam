@@ -8,7 +8,7 @@ router.get('/:name', (req, res, next) => {
   .then(city => {
     posts.findByCityId(city.id, pages)
     .then(posts => {
-      res.render('city', {city, posts})
+      res.render('city', {city, posts, pages})
     }).catch(next)
   }).catch(next)
 })
@@ -24,18 +24,30 @@ router.post('/', (req, res, next) => {
   const body = req.body
   cities.findByName(body.name)
   .then(city => {
-    if (city.name !== null) {
-      cities.getAll() 
-      .then( cities => {
-        res.render('index', {cities, error: 'City already exit, choose another city!'})
+    if (city === null) {
+      cities.create(body)
+      .then(city => {
+        res.redirect(`/cities/${city.name}`)
       })
     } else {
-      cities.create(body)
-      .then(() => {
-        res.redirect('/')
-      }).catch(next)
+      const error = 'City already exit, choose another city!'
+      res.redirect(`/?error=${error}`)
     }
   })
+  // .then(city => {
+  //     console.log('IN', city)
+  //   if (city.name !== null) {
+  //     cities.getAll() 
+  //     .then( cities => {
+  //       
+  //     })
+  //   } else {
+  //     cities.create(body)
+  //     .then(() => {
+  //       res.redirect('/')
+  //     }).catch(next)
+  //   }
+  //})
 })
 
 

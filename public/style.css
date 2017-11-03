@@ -81,12 +81,6 @@ a:link {
   flex-direction: column;
 }
 
-.truncate1000{
-  overflow: hidden;
-  display: block;
-  text-overflow: ellipsis;
-}
-
 .container {
   display: flex;
   flex-direction: row;
@@ -165,10 +159,6 @@ a:link {
   overflow-y: scroll;
 }
 
-.update-page {
-
-}
-
 .city-page-content {
   width: 100%;
   text-align: center;
@@ -189,11 +179,60 @@ a:link {
   border: 1px solid;
 }
 
-.city-page-content .right .editButton {
+.city-page-content .right{
   position: relative;
   bottom: 20px;
 }
 
+.editButton {
+  height: 35px;
+  margin-top: 17px;
+}
+
+
 .login input {
   margin: 2.5px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+
+.col-sm {
+  padding-left: 10px;
+}
+
+
+.titles {
+  display: flex;
+}
+
+.edit-button {
+  margin-right: 200px;
+}
+
+.post-title {
+  width: 100%;
+  border: solid;
+  display: flex;
+  justify-content: center;
+}
+
+.post-display {
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.post-display h3, .truncate1000 {
+  text-align: left; 
+  margin-left: 150px;
+}
+
+.post-buttons {
+  margin-top: 23px;
+}
+
+.post-section {
+  margin-top: 50px;
 }

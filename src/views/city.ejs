@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <% include ./partials/header%>
 
-<h3>Pages:
-  <% for (let i = 1; i < posts.length ; i++) { %>
-    <a href='/cities/<%=city.name%>?pages=<%= i %>'><%= i %></a>
-  <% } %>
-</h3>
+<div class="row">
 
-<div class="container city-page-content">
-
-  <div class="right">
+  <div class="col-sm button_container">
     <% if(userSess) {%>
       <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
       <% include ./modals/posts_add%>
     <%}%>
   </div>
-
-  <div class="left">
-    <% include ./lists/posts%>
+  
+  <div class="col-sm">
+    <h3>Pages:
+      <% if (pages > 1) { %>
+        <a href='/cities/<%=city.name%>?pages=<%= pages-1 %>'>&laquo</a>
+      <% } else { %>
+        <a href='/cities/<%=city.name%>?pages=<%= pages+1 %>'> &raquo</a>
+      <% } %>
+    </h3>
   </div>
 
 </div>
 
+<div class="col-sm post-section">
+  <% include ./lists/posts%>
+</div>
 
 <script src='/index.js'></script>
