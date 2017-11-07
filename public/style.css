@@ -12,10 +12,12 @@ a:link {
 
 .left {
   float: left;
+  margin-left: 10px;
 }
 
 .right {
   float: right;
+  margin-right: 10px;
   padding: 5px;
 }
 
@@ -235,4 +237,8 @@ a:link {
 
 .post-section {
   margin-top: 50px;
+}
+
+.navbar {
+  border-radius: 0;
 }
