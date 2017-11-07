@@ -8,10 +8,10 @@ dbCities.findById = id =>
 dbCities.getAll = () =>
   db.any('SELECT * FROM cities')
 
-dbCities.create = (body) =>
-  db.none('INSERT INTO cities(name, image) VALUES($1, $2)', [body.name, body.city_image])
+dbCities.create = (body) => 
+  db.one('INSERT INTO cities(name, image) VALUES($1, $2) RETURNING *', [body.name, body.city_image])
 
 dbCities.findByName = name =>
-  db.one('SELECT * FROM cities WHERE name = $1', [name])
+  db.oneOrNone('SELECT * FROM cities WHERE name = $1', [name])
 
 module.exports = dbCities

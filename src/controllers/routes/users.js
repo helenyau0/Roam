@@ -42,6 +42,7 @@ router.use(middleware.authorized)
 router.get('/:name', (req, res, next) => {
   users.findByName(req.params.name)
   .then(user => {
+    if (!user) res.render('./common/not_found')
     posts.findByUserId(user.id)
     .then((posts) => {
       res.render('profile', {user, posts})
