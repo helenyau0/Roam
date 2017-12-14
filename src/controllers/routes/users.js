@@ -40,7 +40,7 @@ router.use(middleware.authorized)
 
 
 router.get('/:name', (req, res, next) => {
-  users.findByName(req.params.name)
+  users.findById(req.user.id)
   .then(user => {
     if (!user) res.render('./common/not_found')
     posts.findByUserId(user.id)
