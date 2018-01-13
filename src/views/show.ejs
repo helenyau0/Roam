@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <% include ./partials/header%>
 
-<div class="show-page container">
+<div class="show-page">
   <div class="show-card">
     <% include ./users/card%>
   </div>
-
-  <div class="show-posts">
-    <li class="title"><%= post.title%></li>
-    <li><p class="post-content"><%= post.body%></p></li>
-  </div>
+</div>
+<div class="show-posts">
+  <li class="show-title"><%= post.title%></li>
+  <li><p class="show-body"><%= post.body%></p></li>
 </div>
