@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <% include ./partials/header%>
-<div class="items">
-  <div class="profile">
-    <% include ./modals/user_pic %>
-    <div class="card">
-      <% include ./users/card%>
-    </div>
-    <div>
-      <% if (userSess) { %>
-        <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
-            Edit Profile
-        </button>
-      <% } %>
+<div>
+  <div class="card">
+    <% include ./users/card%>
   </div>
+  <div class="edit-profile">
+    <% if (userSess) { %>
+      <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
+          Edit Profile
+      </button>
+    <% } %>
   </div>
-  <div>
+  <div class="user-posts">
     <% include ./lists/posts%>
   </div>
 </div>

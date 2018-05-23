@@ -3,13 +3,13 @@
 
 <div class="row">
 
-  <div class="col-sm button_container">
+  <div class="col-sm button-container">
     <% if(userSess) {%>
       <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">Add New Post</button>
       <% include ./modals/posts_add%>
     <%}%>
   </div>
-  
+
   <div class="col-sm">
     <h3>Pages:
       <% if (pages > 1) { %>

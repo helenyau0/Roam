@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 li {
@@ -13,6 +15,10 @@ a:link {
 .left {
   float: left;
   margin-left: 10px;
+}
+
+.logo {
+    margin-top: 0;
 }
 
 .right {
@@ -53,7 +59,7 @@ a:link {
   padding: 10px;
   margin: 10px;
   border-style: inset;
-  border-width: 1px; 
+  border-width: 1px;
 }
 
 .city-image:hover {
@@ -88,32 +94,62 @@ a:link {
   flex-direction: row;
 }
 
-.items {
-  display: flex;
-  flex-direction: row;
-  margin-right: 200px;
+.user-photo {
+  width: 300px;
+  height: 300px;
+  border: solid 2px;
+  padding: 15px;
 }
 
-.userInfo {
-  border: 1px solid black;
-  flex-direction: column;
+.info-item {
+  font-size: 20px;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.info-header {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.upload-pic {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.user-date {
+  bottom: 160px;
+  position: absolute;
+  z-index: 2;
+}
+
+.user-name {
+  margin-bottom: 10px;
+  font-size: 40px;
 }
 
 .card {
-  width: 300px;
-  height: 500px;
-  overflow: hidden;
-  transition: 0.3s;
-  padding: 5px;
-  position: relative;
-  right: 30px;
+  text-align: left;
+  margin-left: 150px;
 }
 
-.listItems {
-  position: relative;
-  top: 50px;
-  left: 100px;
-  width: 200px;
+.edit-button {
+  margin-right: 250px;
+}
+
+.user-posts {
+  left: 340px;
+  bottom: 330px;
+  position: absolute;
+  z-index: 2;
+}
+
+.edit-profile {
+  bottom: 560px;
+  left: 63%;
+  position: absolute;
+  z-index: 2;
 }
 
 .container {
@@ -126,17 +162,11 @@ a:link {
 
 .buttons {
   border-radius: 3px;
-  margin: 2px;
-  justify-content: space-around;
+  margin: 3px;
 }
 
-.items-in-posts {
-  display: flex;
-  flex-direction: row;
-  width: 35px;
-  position: relative;
-  left: 974px;
-  bottom: 42px;
+.glyphicon.glyphicon-trash.delete {
+  padding: 6px;
 }
 
 .show-page {
@@ -187,27 +217,22 @@ a:link {
   margin-bottom: 10px;
 }
 
+.btn.btn-primary.editButton {
+  margin-top: 15px;
+  margin-right: 10px;
+}
 
 .login input {
   margin: 2.5px;
 }
 
-.button_container {
+.button-container {
   display: flex;
   justify-content: center;
 }
 
-.col-sm {
-  padding-left: 10px;
-}
-
-
 .titles {
   display: flex;
-}
-
-.edit-button {
-  margin-right: 200px;
 }
 
 .post-title {
@@ -223,8 +248,8 @@ a:link {
 }
 
 .post-display h3, .truncate1000 {
-  text-align: left; 
-  margin-left: 150px;
+  text-align: left;
+  margin-left: 180px;
 }
 
 .post-buttons {
@@ -237,14 +262,4 @@ a:link {
 
 .navbar {
   border-radius: 0;
-}
-
-.upload-pic {
-  float: left;
-}
-
-.profile {
-  width: 30%;
-  margin-left: 200px;
-  border: solid;
 }
