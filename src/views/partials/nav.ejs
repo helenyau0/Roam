@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <nav class="navbar navbar-inverse bg-inverse">
-  <h1 class="logo"><a class="left" href="/">Roam</a>
-    <span class="nav-city-name">
-      <% if (city) { %>
-        <%= city.name %>
-      <% } %>
-    </span>
+  <h1 class="logo">
+    <a class="left" href="/">Roam</a>
+  </h1>
+  <h1 class="nav-city-name">
+    <% if (city) { %>
+      <%= city.name %>
+    <% } %>
   </h1>
   <% if (userSess) { %>
     <a class="right" href="/logout">Logout</a>
