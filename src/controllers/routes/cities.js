@@ -34,20 +34,6 @@ router.post('/', (req, res, next) => {
       res.redirect(`/?error=${error}`)
     }
   })
-  // .then(city => {
-  //     console.log('IN', city)
-  //   if (city.name !== null) {
-  //     cities.getAll() 
-  //     .then( cities => {
-  //       
-  //     })
-  //   } else {
-  //     cities.create(body)
-  //     .then(() => {
-  //       res.redirect('/')
-  //     }).catch(next)
-  //   }
-  //})
 })
 
 
