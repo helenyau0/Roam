@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+
 <% include ./partials/header%>
 <div>
   <div class="card">
     <% include ./users/card%>
   </div>
   <div class="edit-profile">
-    <% if (userSess) { %>
+    <% if (userSess.id === user.id) { %>
       <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
           Edit Profile
       </button>
