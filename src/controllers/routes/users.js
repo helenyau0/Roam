@@ -38,7 +38,6 @@ router.post('/photos', (req, res, next) => {
 
 router.use(middleware.authorized)
 
-
 router.get('/:name', (req, res, next) => {
   users.findById(req.user.id)
   .then(user => {

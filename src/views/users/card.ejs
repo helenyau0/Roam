@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <h1 class="user-name"><%= user.name%></h1>
-<% include ../modals/user_pic %>
+<% if(userSess.id === user.id) { %>
+  <% include ../modals/user_pic %>
+<%} %>
 <img src="<%= user.image%>" class="user-photo">
 <div>
   <p class="info-header">Current City:</p>

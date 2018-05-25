@@ -18,9 +18,11 @@ const closeModal = () => {
 const deletePost = (event) => {
   const post = JSON.parse(event.target.value)
   if (confirm(`Are you sure you want to delete "${post.title}"?`)) {
-    fetch(`/posts/delete/${post.id}`, {method: 'post'})
-    .then(success => {
-      event.target.parentNode.parentNode.remove()
+   fetch(`/posts/delete/${post.id}`, {
+      method: 'post'
+    }).then(success => {      
+      event.target.parentNode.parentNode.parentNode.remove()
     }).catch(console.log)
   }
 }
+
