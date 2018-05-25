@@ -30,11 +30,13 @@ router.post('/update/:id', (req, res, next) => {
   })
 })
 
-router.post('/delete/:id', (req, res, next) => {
-  posts.remove(req.params.id)
+router.post('/delete/:id', (req, res, next) => {  
+  const id = req.params.id
+  posts.remove(id)
   .then(deleted => {
-    res.redirect(`/cities/${deleted.city_id}`)
+    res.send('Deleted');
   })
+  .catch(err => next(err))
 })
 
 module.exports = router
