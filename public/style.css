@@ -1,6 +1,7 @@
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  height: 100%;
 }
 
 .carousel {
@@ -16,6 +17,7 @@ body {
 .carousel-item {
   height: 32rem;
 }
+
 .carousel-item > img {
   position: absolute;
   top: 0;
@@ -26,9 +28,35 @@ body {
 
 .city-image {
   height: 45rem;
-  width: 100%;
 }
 
+.album {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.card-text {
+  font-size: 85%;
+  text-align: center;
+}
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */

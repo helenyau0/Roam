@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const cities = require('../../models/cities')
 const posts = require('../../models/posts')
+const middleware = require('../middlewares')
+
+router.use(middleware.authorized)
 
 router.get('/:name', (req, res, next) => {
   const pages = parseInt(req.query.pages) || 1
