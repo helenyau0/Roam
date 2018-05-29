@@ -1,6 +1,7 @@
 UPLOADCARE_PUBLIC_KEY="6b5326acd4ea5f65a9c3"
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  document.querySelector(".carousel-item").classList.add("active");
   document.querySelector('.editButton').addEventListener('click', openModal)
   document.querySelector('.close').addEventListener('click', closeModal)
   document.querySelector('.exit').addEventListener('click', closeModal)
@@ -25,4 +26,3 @@ const deletePost = (event) => {
     }).catch(console.log)
   }
 }
-

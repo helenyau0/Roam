@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<nav class="navbar navbar-inverse bg-inverse">
-  <h1 class="logo">
-    <a class="left" href="/">Roam</a>
-  </h1>
+<nav class="">
+  <a class="roam-title" href="/">Roam</a>
   <h1 class="nav-city-name">
     <% if (city) { %>
       <%= city.name %>
     <% } %>
   </h1>
   <% if (userSess) { %>
-    <a class="right" href="/logout">Logout</a>
-    <a class="right" href="/users/<%=userSess.name%>">Profile</a>
+    <a class="nav-list" href="/logout">Logout</a>
+    <a class="nav-list" href="/users/<%=userSess.name%>">Profile</a>
   <% } else { %>
-    <a class="right" href="/login">Login</a>
-    <a class="right" href="/users/signup">Sign Up</a>
+    <a class="nav-list" href="/login">Login</a>
+    <a class="nav-list" href="/users/signup">Sign Up</a>
   <% } %>
 </nav>
