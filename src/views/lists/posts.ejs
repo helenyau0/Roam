@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <% posts.forEach(function(post) {%>
-  <div class="container">
-    <div class="row post-display" id ="<%=post.id%>">
-      <div>
-        <h3>
-          <a href="/posts/<%=post.id%>"><%= post.title%></a>
-        </h3>
-      </div>
-      <div class="truncate1000">
+  <div>
+    <h3 class="card-post">
+      <a href="/posts/<%=post.id%>"><%= post.title%></a>
+    </h3>
+    <div class="card card-post">
+      <div class="card-body">
         <%=post.body.slice(0, 1000) %>
       </div>
     </div>
-    <div class="row post-buttons">
-      <div class="col-sm edit-button">
-        <% if(userSess.id === post.user_id) {%>
-          <button class="glyphicon glyphicon-trash delete buttons" value="<%= JSON.stringify(post) %>" aria-hidden="true"></button>
-      </div>
-      <div class="col-sm edit-button">
-          <button class="buttons" aria-hidden="true"><a class="glyphicon glyphicon-edit" href='/posts/update/<%=post.id%>'></a></button>
-        <%}%>
-      </div>
-    </div>
+    <% if(userSess.id === post.user_id) {%>
+      <button type="button" aria-hidden="true" class="glyphicon glyphicon-trash delete" value="<%= JSON.stringify(post) %>">hey </button>
+      <button aria-hidden="true"><a class="glyphicon glyphicon-edit" href='/posts/update/<%=post.id%>'>hey</a></button>
+    <%}%>
   </div>
 <%})%>
