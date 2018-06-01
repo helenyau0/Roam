@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <a class="roam-title navbar-brand" href="/">Roam</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <h1 class="nav-city-name">
     <% if (city) { %>
       <%= city.name %>
     <% } %>
   </h1>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+  <div class="navbar-list collapse navbar-collapse justify-content-between navbarCollapse">
     <% if (userSess) { %>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">

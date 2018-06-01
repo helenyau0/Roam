@@ -5,6 +5,14 @@ body {
 
 .nav-city-name {
   z-index: 2;
+  position: absolute;
+  left: 41rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.navbar-list {
+  position: relative;
 }
 
 /* Carousel */
