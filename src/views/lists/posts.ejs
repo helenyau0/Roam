@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <% posts.forEach(function(post) {%>
   <div class="post-container">
-    <h3 class="post-title">
+    <h4>
       <a href="/posts/<%=post.id%>"><%= post.title%></a>
-    </h3>
+    </h4>
     <div class="card d-flex flex-row post-body">
       <div class="card-body post-text">
         <%=post.body.slice(0, 1000) %>
