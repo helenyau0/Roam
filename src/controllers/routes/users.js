@@ -4,7 +4,7 @@ const {encryptPassword} = require('../../config/authentication')
 const posts = require('../../models/posts')
 const middleware = require('../middlewares')
 
-router.get('/signup', (req, res) => {
+router.get('/signup', (req, res, next) => {
   res.render('signup')
 })
 

@@ -1,20 +1,15 @@
 
 <% include ./partials/header%>
-<div>
-  <div class="card">
-    <% include ./users/card%>
-  </div>
-  <div class="edit-profile">
-    <% if (userSess.id === user.id) { %>
-      <button type="button" class="btn btn-primary editButton"  data-toggle="modal" data-target="#exampleModal">
-          Edit Profile
-      </button>
-    <% } %>
-  </div>
-  <div class="user-posts">
-    <% include ./lists/posts%>
+
+<div class="container">
+  <div class="row no-gutters p-0 m-0">
+    <div class="col">
+      <% include ./users/card%>
+    </div>
+    <div class="col">
+      <% include ./lists/posts%>
+    </div>
   </div>
 </div>
-<% include ./modals/user_edit%>
 
-<script type="text/javascript" src="/index.js"></script>
+<% include ./modals/user_edit%>

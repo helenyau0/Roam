@@ -3,19 +3,19 @@ body {
   padding-bottom: 8rem;
 }
 
+/* Carousel */
+
 .carousel {
   margin-bottom: 4rem;
   width: 90%;
   margin-left: 4.5rem;
 }
 
-/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
 }
@@ -27,6 +27,8 @@ body {
   min-width: 50%;
   height: 32rem;
 }
+
+/* City Card */
 
 .city-image {
   height: 45rem;
@@ -44,7 +46,11 @@ body {
   background-color: #f7f7f7;
 }
 
-.card {
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.city-card {
   float: left;
   width: 33.333%;
   padding: .75rem;
@@ -61,19 +67,63 @@ img {
   height: auto;
 }
 
+/* User Card */
+
+.upload-pic {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.user-card {
+  margin-left: 2rem;
+  position: relative;
+  bottom: 1.5rem;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0.0,0.1);
+}
+
+.card-body {
+  width: 80%;  
+}
+
 .card-text {
   font-size: 85%;
-  text-align: center;
+  margin-left: .5rem;
 }
 
-.user-photo {
-  height: 100px;
-  width: 100px;
+.card-margin {
+  margin-left: .5rem;
 }
 
-.user-image {
-  width: 50px;
-  height: 50px;
+.card-image {
+  height: 20rem;
+  width: 20rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* Posts */
+
+.post-container {
+  margin-right: 1rem;
+  position: relative;
+  right: 3rem;
+}
+
+.post-buttons {
+  position: relative;
+  top: .5rem;
+}
+
+.delete {
+  cursor:pointer;
+}
+
+.post-text {
+  box-shadow: 0px 10px 30px 0px rgba(0,0,0.0,0.1);
+}
+
+.post-body {
+  margin-bottom: 3rem;
 }
 
 .form-signin {
@@ -81,13 +131,16 @@ img {
   padding: 15px;
   margin: 0 auto;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
+
 .form-signin .checkbox {
   font-weight: 400;
 }
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -95,9 +148,11 @@ img {
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
 .form-signin input[type="text"] {
   margin-bottom: -1.5px;
   border-bottom-right-radius: 0;
