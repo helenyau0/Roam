@@ -5,17 +5,17 @@
     <form method='post' action='/posts/update/<%=post.id%>'>
       <div class="d-flex justify-content-space-around">
         <div class="d-flex flex-column">
-          <div class="d-inline-flex">
+          <div class="d-inline-flex update-posts">
             <div class="p-2">
-              <label class="control-label mb-3 mr-1">Title:</label>
+              <label class="control-label mr-1">Title:</label>
             </div>
             <div class="p-2">
               <input class="form-control mb-2 update-title" name='title' value='<%=post.title%>' required/>
             </div>
           </div>
-          <div class="d-inline-flex">
+          <div class="d-inline-flex update-posts">
             <div class="p-2">
-              <label class="control-label mb-3">Body:</label>
+              <label class="control-label">Body:</label>
             </div>
             <div class="p-2">
               <textarea class="form-control mb-3 update-body" name='body' required><%=post.body%></textarea>
