@@ -160,6 +160,21 @@ img {
   right: 4rem;
 }
 
+.update-body {
+  width: 30rem;
+  height: 17rem;
+}
+
+.update-title {
+  width: 30rem;
+  height: 2.5rem;
+}
+
+.update-button {
+  position: relative;
+  right: 1rem;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
