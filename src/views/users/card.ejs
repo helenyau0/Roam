@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<div class="upload-care">
   <% if(userSess.id === user.id) { %>
     <% include ../modals/user_pic %>
   <%} %>
-  <div class="card user-card" style="width: 22rem;">
+</div>
+<div class="card user-card">
     <img class="card-img-top card-image" src="<%= user.image%>" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-margin"><%= user.name%></h5>

@@ -82,12 +82,13 @@ img {
 /* User Card */
 
 .upload-pic {
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-bottom: 2rem;
 }
 
 .user-card {
-  margin-left: 2rem;
+  margin-left: 3rem;
+  width: 22rem;
   position: relative;
   bottom: 1.5rem;
   box-shadow: 0px 10px 20px 0px rgba(0,0,0.0,0.1);
@@ -243,15 +244,8 @@ img {
 }
 
 @media (max-width: 500px) {
-  .update-title {
-    margin-bottom: 1rem;
-  }
-
-  .update-posts {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    bottom: 2rem;
+  .profile-card {
+    margin-left: -2.5rem;
   }
 }
 
@@ -259,6 +253,10 @@ img {
   .city-posts {
     position: relative;
     left: 6rem;
+  }
+
+  .profile-card {
+    right: 4rem;
   }
 }
 
@@ -272,6 +270,11 @@ img {
     width: 25rem;
     height: 2.5rem;
   }
+
+  .post-container {
+    margin-right: 5px;
+    left: 1rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -279,7 +282,12 @@ img {
     position: relative;
     left: 4rem;
   }
+
+  .profile-card {
+    left: 2rem;
+  }
 }
+
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
@@ -290,7 +298,53 @@ img {
   }
 }
 
-@media (max-width: 75em) {
+@media (max-width: 920px) {
+  .update-title {
+    margin-bottom: 1rem;
+  }
+
+  .update-posts {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  .profile-card {
+    right: 3rem;
+  }
+
+  .card-image {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .post-container {
+    margin-right: 5px;
+    left: 1rem;
+  }
+}
+
+@media(max-width: 1150px) {
+  .upload-pic {
+    margin-left: 4rem;
+  }
+
+  .user-card {
+    margin-left: 4rem;
+    width: 20rem;
+  }
+
+  .card-image {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  .post-container {
+    margin-right: 2rem; 
+    right: 1rem;
+  }
+
   .carousel {
     margin-bottom: 0;
     width: 100%;
