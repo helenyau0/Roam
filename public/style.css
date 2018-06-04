@@ -245,7 +245,7 @@ img {
 
 @media (max-width: 500px) {
   .profile-card {
-    margin-left: -2.5rem;
+    margin-left: -3rem;
   }
 }
 
@@ -256,7 +256,7 @@ img {
   }
 
   .profile-card {
-    right: 4rem;
+    right: 3rem;
   }
 }
 
@@ -286,6 +286,17 @@ img {
   .profile-card {
     left: 2rem;
   }
+
+  .show-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show-posts {
+    position: relative;
+    top: 35rem;
+    left: -.5rem;
+  }
 }
 
 
@@ -298,7 +309,7 @@ img {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 992px) {
   .update-title {
     margin-bottom: 1rem;
   }
@@ -322,6 +333,18 @@ img {
   .post-container {
     margin-right: 5px;
     left: 1rem;
+  }
+
+  .show-card {
+    position: relative;
+    right: 5rem;
+  }
+}
+
+@media(min-width: 1075px) {
+  .show-posts {
+    position: relative;
+    margin-left: 5rem;
   }
 }
 
