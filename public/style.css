@@ -1,18 +1,18 @@
 body {
   padding-top: 8rem;
   padding-bottom: 8rem;
+  box-sizing: border-box;
 }
 
-.nav-city-name {
-  z-index: 2;
-  position: absolute;
-  left: 41rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.navbar-list {
+.navbar-city {
+  font-size: 21px;
+  left: 5rem;
   position: relative;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
 }
 
 /* Carousel */
@@ -302,6 +302,10 @@ img {
     position: absolute;
     top: 13rem;
     right: 3rem;
+  }
+
+  .navbar-city {
+    left: 0;
   }
 }
 

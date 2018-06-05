@@ -1,14 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="roam-title navbar-brand" href="/">Roam</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar  navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container justify-content-between">
+    <a class="nav navbar-nav navbar-brand" href="/">Roam</a>
+    <div class="navbar-city navbar-text  mx-auto">
+      <% if (city) { %>
+        <%= city.name %>
+      <% } %>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-  <h1 class="nav-city-name">
-    <% if (city) { %>
-      <%= city.name %>
-    <% } %>
-  </h1>
-  <div class="navbar-list collapse navbar-collapse justify-content-between navbarCollapse">
+    </button>    
+  </div>
+
+  <div class="collapse navbar-collapse pull-left navbarCollapse">
     <% if (userSess) { %>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
