@@ -1,10 +1,8 @@
 UPLOADCARE_PUBLIC_KEY="6b5326acd4ea5f65a9c3"
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  document.querySelector(".carousel-item").classList.add("active");
-})
-
 window.onload = function(event) {
+  document.querySelector(".carousel-item").classList.add("active");
+
   document.querySelectorAll('.delete').forEach((deleted => {deleted.addEventListener('click', deletePost)}))
 
   function deletePost(event) {
