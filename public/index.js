@@ -13,7 +13,7 @@ window.onload = function(event) {
     fetch(`/posts/delete/${post.id}`, {
         method: 'post'
       }).then(success => {      
-        event.target.parentNode.remove()
+        event.target.parentNode.parentNode.parentNode.parentNode.remove()
       }).catch(console.log)
     }
   }
