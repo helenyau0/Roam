@@ -1,229 +1,390 @@
 body {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  box-sizing: border-box;
+}
+
+.error-msg {
   text-align: center;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
-li {
-  list-style: none;
-}
-
-a:link {
-   text-decoration: none;
-}
-
-.left {
-  float: left;
-  margin-left: 10px;
-  display: inline-block;
-}
-
-.nav-city-name {
-  color: lightgray;
+.navbar-city {
+  font-size: 21px;
+  left: 5rem;
   position: relative;
-  margin-top: -10px;
-  display: inline-block;
+  padding: 0;
 }
 
 .navbar {
-  border-radius: 0;
-  position: relative;
-  padding: 15px;
+  display: flex;
+}
+
+/* Carousel */
+
+.carousel {
+  margin-bottom: 4rem;
+  width: 90%;
+  margin-left: 4.5rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 32rem;
+}
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 50%;
+  height: 32rem;
+}
+
+/* City Card */
+
+.city-image {
+  height: 45rem;
+}
+
+.city-upload__image {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -3rem;
+}
+
+.album {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.city-card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+img {
+  width: 100%;
   height: auto;
 }
 
-.logo {
-  margin-top: 0;
-}
-
-.right {
-  float: right;
-  margin-right: 10px;
-  position: relative;
-  display: inline-block;
-  margin-top: 5px;
-}
-
-.modal {
-  display: none;
-}
-
-.hover-name {
-  display: none;
-}
-
-.city-image {
-  width: 400px;
-  height: 400px;
-  padding: 10px;
-  margin: 10px;
-  border-style: inset;
-  border-width: 1px;
-}
-
-.city-image:hover {
-  background-color: black;
-}
-
-.label {
-  border-radius: 10px;
-}
-.text-left {
-  text-align: left;
-}
-.modal-body .form-horizontal .col-sm-2,
-.modal-body .form-horizontal .col-sm-10 {
-  width: 100%
-}
-
-.modal-body .form-horizontal .control-label {
-  text-align: left;
-}
-.modal-body .form-horizontal .col-sm-offset-2 {
-  margin-left: 15px;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-.user-photo {
-  width: 300px;
-  height: 300px;
-  border: solid 2px;
-  padding: 15px;
-}
-
-.info-item {
-  font-size: 20px;
-  margin-left: 2px;
-  display: inline-block;
-}
-
-.info-header {
-  font-weight: bold;
-  font-size: 20px;
-  display: inline-block;
-}
+/* User Card */
 
 .upload-pic {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.user-card {
+  margin-left: 3rem;
+  width: 22rem;
   position: relative;
-  margin-bottom: 5px;
+  bottom: 1.5rem;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0.0,0.1);
 }
 
-.user-date {
-  bottom: 5px;
-  z-index: 2;
+.profile-card {
   position: relative;
-
-}
-
-.user-name {
-  margin-bottom: 10px;
-  font-size: 40px;
-}
-
-.card {
-  text-align: left;
-  margin-left: 150px;
-}
-
-.edit-button {
-  margin-right: 250px;
-}
-
-.user-posts {
-  left: 340px;
-  bottom: 330px;
-  position: absolute;
-  z-index: 2;
-}
-
-.edit-profile {
-  bottom: 560px;
-  left: 65%;
-  position: absolute;
-  z-index: 2;
-}
-
-.input {
-  border-radius: 4px;
-}
-
-.buttons {
-  border-radius: 3px;
-  margin: 3px;
-}
-
-.glyphicon.glyphicon-trash.delete {
-  padding: 6px;
-}
-
-.show-page {
-  position: absolute;
+  bottom: 2rem;
 }
 
 .show-card {
-  text-align: left;
-  margin-left: 150px;
-  display: inline-block;
+  position: relative;
+  bottom: 1rem;
 }
 
-.show-posts {
-  width: 800px;
-  overflow-y: scroll;
-  position: absolute;
-  height: 500px;
-  margin-left: 490px;
-  top: 100px;
-  z-index: 2;
+.card-body {
+  width: 80%;  
 }
 
-.show-title {
-  font-size: 40px;
-  text-decoration: underline;
+.card-text {
+  font-size: 85%;
+  margin-left: .5rem;
 }
 
-.show-body {
-  font-size: 15px;
+.card-margin {
+  margin-left: .5rem;
 }
 
-.editButton {
-  height: 35px;
-  margin-bottom: 10px;
+.card-image {
+  height: 20rem;
+  width: 20rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
-.btn.btn-primary.editButton {
-  margin-top: 15px;
-  margin-right: 10px;
-}
+/* Posts */
 
-.login input {
-  margin: 2.5px;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  padding: 2px 16px;
-}
-
-.post-display {
-  margin-bottom: 35px;
-  width: 100%;
-}
-
-.post-display h3, .truncate1000 {
-  text-align: left;
-  margin-left: 180px;
+.post-container {
+  margin-right: 1rem;
+  position: relative;
+  right: 3rem;
 }
 
 .post-buttons {
-  margin-top: 23px;
+  position: relative;
+  top: .5rem;
 }
+
+.delete {
+  cursor:pointer;
+}
+
+.post-text {
+  box-shadow: 0px 10px 30px 0px rgba(0,0,0.0,0.1);
+}
+
+.post-body {
+  margin-bottom: 3rem;
+}
+
+.city-posts {
+  position: relative;
+  top: 2rem;
+  right: 1rem;
+}
+
+.show-posts {
+  position: relative;
+  top: 3rem;
+  right: 4rem;
+}
+
+.update-body {
+  width: 30rem;
+  height: 17rem;
+}
+
+.update-title {
+  width: 30rem;
+  height: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.update-button {
+  position: relative;
+  right: 1rem;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1.5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin #inputEmail {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin #inputPassword {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[placeholder="Confirm password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin #login-email {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin #login-password {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+@media (max-width: 500px) {
+  .profile-card {
+    margin-left: -3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .city-posts {
+    position: relative;
+    left: 6rem;
+  }
+
+  .profile-card {
+    right: 3rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .update-body {
+    width: 25rem;
+    height: 17rem;
+  }
+
+  .update-title {
+    width: 25rem;
+    height: 2.5rem;
+  }
+
+  .post-container {
+    margin-right: 5px;
+    left: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .city-posts {
+    position: relative;
+    left: 4rem;
+  }
+
+  .profile-card {
+    left: 2rem;
+  }
+
+  .show-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show-posts {
+    position: relative;
+    top: 35rem;
+    left: -.5rem;
+  }
+
+  .city-posts {
+    position: absolute;
+    top: 13rem;
+    right: 3rem;
+  }
+
+  .navbar-city {
+    left: 0;
+  }
+}
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 992px) {
+  .update-title {
+    margin-bottom: 1rem;
+  }
+
+  .update-posts {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  .profile-card {
+    right: 3rem;
+  }
+
+  .card-image {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .post-container {
+    margin-right: 5px;
+    left: 1rem;
+  }
+
+  .show-card {
+    position: relative;
+    right: 5rem;
+  }
+}
+
+@media(min-width: 1075px) {
+  .show-posts {
+    position: relative;
+    margin-left: 5rem;
+  }
+}
+
+@media(max-width: 1150px) {
+  .upload-pic {
+    margin-left: 4rem;
+  }
+
+  .user-card {
+    margin-left: 4rem;
+    width: 20rem;
+  }
+
+  .card-image {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  .post-container {
+    margin-right: 2rem; 
+    right: 1rem;
+  }
+
+  .carousel {
+    margin-bottom: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+

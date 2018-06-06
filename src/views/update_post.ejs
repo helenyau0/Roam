@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-
 <% include ./partials/header%>
 
-<div class="update-page">
-  <form method='post' action='/posts/update/<%=post.id%>'>
-    <label>Title:
-    <div>
-      <input name='title' value='<%=post.title%>'/>
-    </div>
-    </label><br>
-    <label>Body:
-    <div>
-      <textarea name='body'><%=post.body%></textarea>
-    </div>
-    </label>
-    <button type='submit'>Update</button>
-  </form>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <form method='post' action='/posts/update/<%=post.id%>'>
+      <div class="d-flex justify-content-space-around">
+        <div class="d-flex flex-column">
+          <div class="d-inline-flex update-posts">
+            <div class="p-2">
+              <label class="control-label mr-1">Title:</label>
+            </div>
+            <div class="p-2">
+              <input class="form-control mb-2 update-title" name='title' value='<%=post.title%>' required/>
+            </div>
+          </div>
+          <div class="d-inline-flex update-posts">
+            <div class="p-2">
+              <label class="control-label">Body:</label>
+            </div>
+            <div class="p-2">
+              <textarea class="form-control mb-3 update-body" name='body' required><%=post.body%></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary update-button" type='submit'>Update</button>
+      </div>
+    </form>
+  </div>
 </div>

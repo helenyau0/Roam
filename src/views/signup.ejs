@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<% include ./partials/header%>
+<% include ./partials/header.ejs %>
 
-<p><%= error%></p>
+<p class="error-msg"><%= error %></p>
 
-<h1>Sign Up!</h1>
-<div class="login">
-  <form action="/users/signup" method="post"/>
-    <input class="input" type="text" name="name" placeholder="name" required/><br>
-    <input class="input" type="email" name="email" placeholder="email" required/><br>
-    <input class="input" type="password" name="password" placeholder="password" required/><br>
-    <input class="input" type="password" name="confirm" placeholder="confirm password" required/><br>
-    <input type="submit" value="Sign Up"/>
+<div class="container">
+  <form class="form-signin" action="/users/signup" method="post"/>
+    <h2 class="form-signin-heading">Sign Up</h2>
+    <label for="inputName" class="sr-only">Name</label>
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputConfirm" class="sr-only">Confirm</label>
+    <input type="password" name="confirm" id="inputConfirm" class="form-control" placeholder="Confirm password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
   </form>
 </div>
-<script type="text/javascript" src='/index.js'></script>

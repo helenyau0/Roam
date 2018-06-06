@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <% include ./partials/header.ejs %>
-<h1>Login!</h1>
 
-<%= error %>
+<p class="error-msg"><%= error %></p>
 
-<div class="login">
-  <form action="/login" method="post">
-    <input class="input" name="username" type="email" placeholder="Email" required/><br>
-    <input class="input" name="password" type="password" placeholder="Password" required/><br>
-    <input clas="buttons" type="submit" value="Log In"/>
+<div class="container">
+  <form class="form-signin" action="/login" method="post">
+    <h2 class="form-signin-heading">Sign in</h2>
+    <label for="login-email" class="sr-only">Email address</label>
+    <input type="email" name="username" id="login-email" class="form-control" placeholder="Email address" required autofocus>
+    <label for="login-password" class="sr-only">Password</label>
+    <input type="password" name="password" id="login-password" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
-</div >
-<script type="text/javascript" src='/index.js'>
-</script>
+</div>

@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<form class="" action="/users/<%= userSess.id%>" method="post">
-  <div tabindex="-1" role="dialog" class="modal">
-    <div role="document" class="modal-dialog">
-      <div class="modal-content myModal">
-
+<form action="/users/<%= userSess.id%>" method="post">
+  <div class="modal edit-button" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
         <div class="modal-header">
-          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-          <h4 class="modal-title">Edit Profile</h4>
+          <h5 class="modal-title">Edit profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-
         <div class="modal-body">
           <div class="form-group">
-            <label class="col-sm-2 control-label">Name</label>
-            <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" required/>
-            </div>
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" name="name" class="form-control" required>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Current City</label>
-            <div class="col-sm-10">
-              <input type="text" name="current_city" class="form-control" required/>
-            </div>
+            <label for="recipient-name" class="col-form-label">Current city:</label>
+            <input type="text" name="current_city" class="form-control" id="recipient-name" required>
           </div>
         </div>
-
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn btn-default exit">Close</button>
-          <button type="submit" class="btn btn-primary save">Update Profile</button>
+          <button type="submit" class="btn btn-primary">Update profile</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
