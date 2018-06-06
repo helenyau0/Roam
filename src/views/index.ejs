@@ -9,10 +9,10 @@
 <% } %>
 
 <main role="main">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <% cities.forEach(function(city) {%>
-        <li data-target="#carouselExampleIndicators" data-slide-to="<%=city.id%>" class="active"></li>
+        <li data-target="#carouselIndicators" data-slide-to="<%=city.id%>" class="active"></li>
       <%})%>
     </ol>
     <div class="carousel-inner">
@@ -27,11 +27,11 @@
         </div>
       <%})%>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
