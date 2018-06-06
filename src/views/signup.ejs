@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <% include ./partials/header.ejs %>
 
-<%= error %>
+<p class="error-msg"><%= error %></p>
+
 <div class="container">
   <form class="form-signin" action="/users/signup" method="post"/>
     <h2 class="form-signin-heading">Sign Up</h2>
@@ -21,14 +22,3 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
   </form>
 </div>
-
-
-<!-- <div class="login">
-  <form action="/users/signup" method="post"/>
-    <input class="input" type="text" name="name" placeholder="name" required/><br>
-    <input class="input" type="email" name="email" placeholder="email" required/><br>
-    <input class="input" type="password" name="password" placeholder="password" required/><br>
-    <input class="input" type="password" name="confirm" placeholder="confirm password" required/><br>
-    <input type="submit" value="Sign Up"/>
-  </form>
-</div> -->

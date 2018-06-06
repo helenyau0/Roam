@@ -12,12 +12,12 @@ router.post('/signup', (req, res, next) => {
   const {password, confirm, email} = req.body
   const hashed = encryptPassword(password)
   if (password !== confirm) {
-    res.render('signup', {error: "Password does not match!"})
+    res.render('signup', {error: "Passwords do not match!"})
   } else {
     users.findByEmail(email)
     .then(user => {
       if(user) {
-        res.render('signup', {error: "Email Taken!"})
+        res.render('signup', {error: "Email is taken!"})
       } else if(user === null) {
         users.create(req.body, hashed)
         res.redirect('/login')

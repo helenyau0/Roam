@@ -4,6 +4,10 @@ body {
   box-sizing: border-box;
 }
 
+.error-msg {
+  text-align: center;
+}
+
 .navbar-city {
   font-size: 21px;
   left: 5rem;
