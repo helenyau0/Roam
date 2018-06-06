@@ -1,6 +1,6 @@
 INSERT INTO cities (name, image)
 VALUES
-('Oakland', '/image/dt-oakland.jpg'),
+('Oakland', '/image/Oakland.jpg'),
 ('Las Vegas', '/image/Las-Vegas.jpg'),
 ('Neverland', '/image/Neverland.png'),
 ('San Francisco', '/image/San-Francisco.jpg'),
