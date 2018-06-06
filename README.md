@@ -1,39 +1,10 @@
-# Roam (330)
-
-## Skills
-
-- Can build a full stack application using Express
-- Can add authorization to an HTTP API to restrict access to certain resources
-- Can write end-to-end tests for an existing HTTP API using the chai-http library
-- Can describe the differences between `unit`, `integration` and `end-to-end` tests
-- Can describe the general programming term `Minimum Viable Product` or `MVP`
-- Can determine which HTTP application feature requirements are required to build an MVP of said feature
-- Can build a SQL schema for a given problem definition
-- Can build a HTTP API with authentication using Passport OAuth
-
-
-## Challenge Rating
-
-This goal will likely be within your ZPD if you...
-
-- Can use the [Express.js](https://expressjs.com/) framework to build a web app
-- Have used git and GitHub to do basic tasks like forking, cloning, making commits, and pushing to a remote repository
-- Are comfortable with the Node.js programming environment and with npm
-- Are familiar with HTML/CSS frameworks like Bootstrap
-- Are interested in building apps from wireframes
-- Are interested in user interface (UI) design
+# Roam
 
 ## Description
 
 You have been commissioned to build a travel community, code-named Roam for now, for users to share tips about their favorite locations around the world.
 
 The client has provided basic wireframes and user stories (broken into sprints). In some cases, these requirements may be vague or incomplete.
-
-## Context
-
-This goal will give you experience building an app from a set of client needs. **The goal is to gain experience working on a development project in a group while navigating a client's feature list.**
-
-Choose this goal if you’ve already build full-stack JavaScript apps or are interested in leveling-up your skills. Roam requires that you implement authentication- not a trivial task! This will be an immersive, intensive, and highly structured study.
 
 ### Recommended Pace
 
@@ -166,33 +137,3 @@ A user is authorized to perform certain actions on the site, according to the fo
 - See the number of comments they've left, on their public profile.
 - Only add a comment when logged in.
 - Only edit/delete their own comments.
-
-## Resources
-
-Use these resources to fill in the gaps in your skills and knowledge as you find them. There is more here than you can do in a week, so focus on the areas that are in your zone of proximal development (ZPD).
-
-##### Passport Example apps
-- [Passport Express Example](https://github.com/passport/express-4.x-local-example): Note that there is no real DB here, data lives only on the server
-- [Passport Express, Twitter login](https://github.com/passport/express-4.x-twitter-example)
-
-##### Tools
-
-- [Express.js][express]: "Fast, unopinionated, minimalist web framework for Node.js"
-- [Passport](http://passportjs.org/): "Simple, unobtrusive authentication for Node.js"
-
-##### Guides
-
-- The official [Express.js Guide][express-guide] #express #nodejs
-- MDN: [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) #html #dom #js
-- MDN: [Guide to Event Handlers](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers) #dom #js
-
-##### Courses
-
-- Treehouse: [Express Basics (3h)](https://teamtreehouse.com/library/express-basics) #express #nodejs
-- Treehouse: [Understanding Express Middleware (23m)](https://teamtreehouse.com/library/understanding-express-middleware-2) #express #middleware
-- Code School: [Building Blocks of Express.js (5h)](https://www.codeschool.com/courses/building-blocks-of-express-js) #express #js
-
-##### Books
-
-- [Eloquent JavaScript](http://eloquentjavascript.net) #js
-  - Especially [Chapter 20: Node.js](http://eloquentjavascript.net/20_node.html) #nodejs
