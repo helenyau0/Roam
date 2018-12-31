@@ -26,6 +26,9 @@ passport.use('signup', new LocalStrategy({
   passwordField : 'password',
   passReqToCallback: true
 }, (req, email, password, done) => {
+  if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(password)) {
+    return done(null, false, { message: "Password must be longer than 8 and contain at least: 1 capital letter, 1 lowercase letter, and 1 number"})
+  }
   if(password !== req.body.confirm) {
     return done(null, false, { message: "Passwords do not match, try again."})
   } else {
