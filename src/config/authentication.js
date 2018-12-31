@@ -13,13 +13,36 @@ passport.use(new LocalStrategy(
       if (bcrypt.compareSync(password, foundUser.password)) {
          return done(null, foundUser)
       } else {
-        return done(null, false, {message: "Invalid password"})
+        return done(null, false, { message: "Invalid password" })
       }
     }).catch(noUserFound => {
-      return done(null, false, {message: "Invalid email"})
+      return done(null, false, { message: "Invalid email" })
     })
   })
 )
+
+passport.use('signup', new LocalStrategy({
+  usernameField : 'email',
+  passwordField : 'password',
+  passReqToCallback: true
+}, (req, email, password, done) => {
+  if(password !== req.body.confirm) {
+    return done(null, false, { message: "Passwords do not match, try again."})
+  } else {
+    dbUsers.findByEmail(email)
+    .then(user => {
+      if(user) {
+        return done(null, false, { message: "This email is already taken." })
+      } else if(user === null) {
+        const hash = encryptPassword(password)
+        dbUsers.create(req.body, hash)
+        .then(user => {
+          return done(null, user)
+        })
+      }
+    })
+  }
+}))
 
 passport.serializeUser((user, done) => {
   done(null, user.id)
