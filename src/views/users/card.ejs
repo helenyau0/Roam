@@ -7,7 +7,7 @@
 <div class="card user-card">
     <img class="card-img-top card-image" src="<%= user.image%>" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-margin"><%= user.name%></h5>
+      <h5 class="card-margin"><%= user.name[0].toUpperCase() + user.name.slice(1)%></h5>
       <p class="card-text">Current city: <%= user.current_city%></p>
       <p class="card-text">Join date: <%= user.created_at.toString().slice(0, 15) %></p>
       <% if (userSess.id === user.id) { %>
