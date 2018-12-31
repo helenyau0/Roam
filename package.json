@@ -35,10 +35,12 @@
     "dotenv": "^4.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "nodemon": "^1.17.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg-promise": "^6.10.3",
     "uploadcare": "^0.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
