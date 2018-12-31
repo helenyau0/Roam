@@ -1,31 +1,23 @@
 const router = require('express').Router()
 const users = require('../../models/users')
-const {encryptPassword} = require('../../config/authentication')
+const {encryptPassword, passport} = require('../../config/authentication')
 const posts = require('../../models/posts')
 const middleware = require('../middlewares')
 
-router.get('/signup', (req, res, next) => {
-  res.render('signup')
-})
-
-router.post('/signup', (req, res, next) => {
-  const {password, confirm, email} = req.body
-  const hashed = encryptPassword(password)
-  if (password !== confirm) {
-    res.render('signup', {error: "Passwords do not match!"})
+router.get('/signup', (req, res) => {
+  if(!req.user) {
+    res.render('signup', { error: req.flash('error') })
   } else {
-    users.findByEmail(email)
-    .then(user => {
-      if(user) {
-        res.render('signup', {error: "Email is taken!"})
-      } else if(user === null) {
-        users.create(req.body, hashed)
-        res.redirect('/login')
-      }
-    })
-    .catch(next)
+    res.redirect('/')
   }
 })
+
+router.post('/signup', passport.authenticate('signup', {
+    successRedirect: '/',
+    failureRedirect: '/users/signup',
+    failureFlash : true
+  })
+)
 
 router.post('/photos', (req, res, next) => {
   const profile_pic = req.body.content
